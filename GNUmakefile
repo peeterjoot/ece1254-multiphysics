@@ -1,5 +1,6 @@
 THISDIR := ece1254-multiphysics
 THISBOOK := ece1254
+BASEVER := b78763e
 
 include ../latex/make.bookvars
 
