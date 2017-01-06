@@ -46,13 +46,13 @@ proj :: ece1254projectReport.pdf
 
 #epsconv : $(PDFS_FROM_EPS)
 
-projmatlab.tex : ../METADATA ../../matlab/METADATA
+projmatlab.tex : ../METADATA $(HOME)/physicsplay/matlab/METADATA
 	(cd .. ; ./METADATA -matlab -latex -ece1254 -filter ece1254/proj ) > $@
 
-ps3bmatlab.tex : ../METADATA ../../matlab/METADATA
+ps3bmatlab.tex : ../METADATA $(HOME)/physicsplay/matlab/METADATA
 	(cd .. ; ./METADATA -matlab -latex -ece1254 -filter ece1254/ps3b/ ) > $@
 
-ps3amatlab.tex : ../METADATA ../../matlab/METADATA
+ps3amatlab.tex : ../METADATA $(HOME)/physicsplay/matlab/METADATA
 	(cd .. ; ./METADATA -matlab -latex -ece1254 -filter ece1254/ps3a/ ) > $@
 
 multiphysicsProblemSet3a.pdf : multiphysicsProblemSet3aProblem1.tex
