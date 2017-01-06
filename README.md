@@ -1,2 +1,3 @@
 # ece1254-multiphysics
-course notes for ece1254 multiphysics modelling
+
+Class notes and problems from 'Modeling of Multiphysics Systems', taught by Prof. P. Triverio.
