@@ -1,6 +1,5 @@
 THISDIR := ece1254-multiphysics
 THISBOOK := ece1254
-BASEVER := b78763e
 
 include ../latex/make.bookvars
 
@@ -46,13 +45,13 @@ proj :: ece1254projectReport.pdf
 
 #epsconv : $(PDFS_FROM_EPS)
 
-projmatlab.tex : ../METADATA $(HOME)/physicsplay/matlab/METADATA
+projmatlab.tex : ../METADATA ../matlab/METADATA
 	(cd .. ; ./METADATA -matlab -latex -ece1254 -filter ece1254/proj ) > $@
 
-ps3bmatlab.tex : ../METADATA $(HOME)/physicsplay/matlab/METADATA
+ps3bmatlab.tex : ../METADATA ../matlab/METADATA
 	(cd .. ; ./METADATA -matlab -latex -ece1254 -filter ece1254/ps3b/ ) > $@
 
-ps3amatlab.tex : ../METADATA $(HOME)/physicsplay/matlab/METADATA
+ps3amatlab.tex : ../METADATA ../matlab/METADATA
 	(cd .. ; ./METADATA -matlab -latex -ece1254 -filter ece1254/ps3a/ ) > $@
 
 multiphysicsProblemSet3a.pdf : multiphysicsProblemSet3aProblem1.tex
