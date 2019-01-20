@@ -1,10 +1,7 @@
 THISDIR := ece1254-multiphysics
 THISBOOK := ece1254
 
-export BOOKSUBVER := 1
-export BOOKMAJVER := 0
-# This isn't a good way to version.  It depends on the local git reflog history count.
-export REVCOUNTSTART := 1
+include make.revision
 
 include ../latex/make.bookvars
 
