@@ -2,9 +2,6 @@ THISDIR := ece1254-multiphysics
 THISBOOK := ece1254
 
 include make.revision
-
-VER := $(shell grep Version .revinfo/gitCommitDateAsMyTime.tex | sed 's/.*{//;s/.xspace.*//;')
-
 include ../latex/make.bookvars
 
 INCOMPLETE += multiphysicsProblemSet1Problem1.tex
@@ -23,10 +20,6 @@ SOURCE_DIRS += appendix
 FIGURES := ../figures/$(THISBOOK)
 SOURCE_DIRS += $(FIGURES)
 
-# also toggle redacted classicthesis-config.tex
-# FIXME: changing this flag should be a dependency of matlab.tex 
-#REDACTED := -redacted
-
 GENERATED_SOURCES += matlab.tex 
 GENERATED_SOURCES += mathematica.tex 
 GENERATED_SOURCES += ps3amatlab.tex
@@ -40,13 +33,6 @@ THISBOOK_DEPS += $(PDFS_FROM_EPS)
 THISBOOK_DEPS += kbordermatrix.sty
 
 include ../latex/make.rules
-
-dist:
-	cp $(THISBOOK).pdf $(THISBOOK).$(VER).pdf
-
-# a for annotate (releases).
-tag:
-	git tag -a $(THISBOOK).$(VER).pdf
 
 #all :: proj
 proj :: ece1254projectReport.pdf
