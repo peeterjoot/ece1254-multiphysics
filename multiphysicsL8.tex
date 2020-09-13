@@ -225,7 +225,7 @@ Impose the following to find \( \beta_{k-1} \)
 
 Note that for \( \Bx, \By \) in \R{n}, \( \innerprod{\Bx}{\By} = \Bx^\T \By \) is \( O(n) \), and \( M \Bx \) is \( O(n^2) \).
 
-A conjugate gradient and LU comparision is given in \cref{tab:multiphysicsL8:400}, where \( k < n \)
+A conjugate gradient and LU comparison is given in \cref{tab:multiphysicsL8:400}, where \( k < n \)
 
 \captionedTable{LU vs Conjugate gradient order.}{tab:multiphysicsL8:400}{
 \begin{tabular}{|l|l|l|}
@@ -240,7 +240,7 @@ Conjugate gradient & \( O(k n^2) \) & \( 5.4          \) \\ \hline
 
 \begin{enumerate}
 \item How to select \( \Bx^{(0)} \) ?  An initial rough estimate can often be found by solving a simplified version of the problem.
-\item Is it neccessary to reserve memory space to store \( M \)?  No.  If \( \By = M \Bz \), the product can be calculated without physically storing the full matrix \( M \).
+\item Is it necessary to reserve memory space to store \( M \)?  No.  If \( \By = M \Bz \), the product can be calculated without physically storing the full matrix \( M \).
 \end{enumerate}
 
 %\EndArticle

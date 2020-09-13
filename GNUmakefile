@@ -20,11 +20,12 @@ SOURCE_DIRS += appendix
 FIGURES := ../figures/$(THISBOOK)
 SOURCE_DIRS += $(FIGURES)
 
-GENERATED_SOURCES += matlab.tex 
-GENERATED_SOURCES += mathematica.tex 
+GENERATED_SOURCES += matlab.tex
+GENERATED_SOURCES += mathematica.tex
 GENERATED_SOURCES += ps3amatlab.tex
 GENERATED_SOURCES += ps3bmatlab.tex
 GENERATED_SOURCES += projmatlab.tex
+GENERATED_SOURCES += backmatter.tex
 
 #EPS_FILES := $(wildcard $(FIGURES)/report/*.eps)
 #PDFS_FROM_EPS := $(subst eps,pdf,$(EPS_FILES))
@@ -32,7 +33,16 @@ GENERATED_SOURCES += projmatlab.tex
 THISBOOK_DEPS += $(PDFS_FROM_EPS)
 THISBOOK_DEPS += kbordermatrix.sty
 
+DO_SPELL_CHECK := $(shell cat spellcheckem.txt)
+
 include ../latex/make.rules
+
+.PHONY: spellcheck
+spellcheck: $(patsubst %.tex,%.sp,$(filter-out $(DONT_SPELL_CHECK),$(DO_SPELL_CHECK)))
+
+%.sp : %.tex
+	spellcheck $^
+	touch $@
 
 #all :: proj
 proj :: ece1254projectReport.pdf
@@ -59,9 +69,9 @@ multiphysicsProblemSet3b.pdf : ps3bmatlab.tex
 
 ece1254projectReport.pdf :: projmatlab.tex
 ece1254projectReport.pdf :: ece1254projectReport.tex ../ece1254/HarmonicBalanceAbstract.tex ../ece1254/HarmonicBalanceText.tex
-ece1254projectReport.pdf :: ./peeters_macros.sty ./peeters_layout.sty ./peeters_layout_exercise.sty ./macros_bm.sty 
+ece1254projectReport.pdf :: ./peeters_macros.sty ./peeters_layout.sty ./peeters_layout_exercise.sty ./macros_bm.sty
 
-copy: 
+copy:
 	cp ece1254.pdf ece1254projectReport.pdf ../blogit/HarmonicBalance.pdf proj/
 
 multiphysicsProblemSet1.pdf :: $(PDF_DEPS)
@@ -80,3 +90,8 @@ multiphysicsProblemSet2b.pdf :: multiphysicsProblemSet2bProblem2.tex
 
 clean ::
 	rm -f ece1254projectReport.pdf
+
+backmatter.tex: ../latex/classicthesis_mine/backmatter_with_parts.tex
+	rm -f $@
+	ln -s ../latex/classicthesis_mine/backmatter_with_parts.tex backmatter.tex
+

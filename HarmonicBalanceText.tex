@@ -46,7 +46,7 @@ The netlist parser was also extended to allow the specification of diode lines o
 \textbf{Dlabel \(n_1\) \(n_2\) \(I_0\) \(V_{\textrm{T}}\)},
 \end{center}
 
-This represents a diode modelled as a current source \( i_{\textrm{d}}(t) = I_0 \lr{ e^{ \lr{v^{(n_1)}(t) - v^{(n_2)}(t)}/V_{\textrm{T}} } - 1 } \).  The constant portion of this model is added into the linear portion of the resulting matrix equations.  The nonlinear contributions of each diode line are returned from NodalAnalysis() as a list of structures with fields (io, type, vt, vp, vn), with type = 'exp'.
+This represents a diode modeled as a current source \( i_{\textrm{d}}(t) = I_0 \lr{ e^{ \lr{v^{(n_1)}(t) - v^{(n_2)}(t)}/V_{\textrm{T}} } - 1 } \).  The constant portion of this model is added into the linear portion of the resulting matrix equations.  The nonlinear contributions of each diode line are returned from NodalAnalysis() as a list of structures with fields (io, type, vt, vp, vn), with type = 'exp'.
 
 In addition to the diode model, two nonlinear power-law circuit elements were implemented.  The first is a nonlinear conductance \( g(t) = I_0 \lr{ \lr{v^{(n_1)}(t) - v^{(n_2)}(t)}/V_{\textrm{T}}}^k \) that is specified with lines of the form
 
