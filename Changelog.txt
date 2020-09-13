@@ -1,3 +1,9 @@
+ece1254.V0.1.9.pdf
+
+- update email address
+- spell check rules and spellcheck pass.
+- fix listing hyphenation
+
 ===================================================================================
 v.4:
 
