@@ -21,11 +21,3 @@ multiphysicsL17.tex
 multiphysicsL17ModelOrder.tex
 multiphysicsL18.tex
 multiphysicsL19.tex
-multiphysicsProblemSet1Problem1.tex
-multiphysicsProblemSet1Problem2.tex
-multiphysicsProblemSet1Problem3.tex
-multiphysicsProblemSet2aProblem1.tex
-multiphysicsProblemSet2bProblem1.tex
-multiphysicsProblemSet2bProblem2.tex
-multiphysicsProblemSet3aProblem1.tex
-multiphysicsProblemSet3bProblem1.tex
