@@ -15,35 +15,35 @@
 %\generatetitle{Matrix form for discrete time Fourier transform}
 %\chapter{Matrix form for discrete time Fourier transform}
 \label{chap:discreteFourierMatrixForm}
-
+%
 \paragraph{Transform pair}
 \index{DFT|see {discrete Fourier transform}}
 \index{discrete Fourier transform}
-
+%
 In \citep{phy487:discreteFourierTransform} a verification of the discrete Fourier transform pairs was performed.  A much different looking discrete Fourier transform pair is given in \citep{giannini2004NonlinearMicrowaveCircuitDesign} \S A.4.  This transform pair samples the points at what are called the \textAndIndex{Nykvist time instant}s given by
-
+%
 \begin{equation}\label{eqndiscreteFourierMatrixForm:20}
 t_k = \frac{T k}{2 N + 1}, \qquad k \in [-N, \cdots N]
 \end{equation}
-
+%
 Note that the endpoints of these sampling points are not \( \pm T/2 \), but are instead at
-
+%
 \begin{equation}\label{eqndiscreteFourierMatrixForm:40}
 \pm \frac{T}{2} \inv{1 + 1/N},
 \end{equation}
-
+%
 which are slightly within the interior of the \( [-T/2, T/2] \) range of interest.  The reason for this slightly odd seeming selection of sampling times becomes clear if one calculate the inversion relations.
-
+%
 Given a periodic (\( \omega_0 T = 2 \pi \)) bandwidth limited signal evaluated only at the Nykvist times \( t_k \),
-
+%
 %\begin{equation}\label{eqndiscreteFourierMatrixForm:60}
 \boxedEquation{eqndiscreteFourierMatrixForm:80}{
 x(t_k) = \sum_{n = -N}^N X_n e^{ j n \omega_0 t_k},
 }
 %\end{equation}
-
+%
 assume that an inversion relation can be found.  To find \( X_n \) evaluate the sum
-
+%
 \begin{dmath}\label{eqndiscreteFourierMatrixForm:100}
 \sum_{k = -N}^N x(t_k) e^{-j m \omega_0 t_k}
 =
@@ -57,10 +57,10 @@ e^{-j m \omega_0 t_k}
 \sum_{k = -N}^N
 e^{ j (n -m )\omega_0 t_k}
 \end{dmath}
-
+%
 This interior sum has the value \( 2 N + 1 \) when \( n = m \).  For \( n \ne m \), and
 \( a = e^{j (n -m ) \frac{2 \pi}{2 N + 1}} \), this is
-
+%
 \begin{dmath}\label{eqndiscreteFourierMatrixForm:120}
 \sum_{k = -N}^N
 e^{ j (n -m )\omega_0 t_k}
@@ -76,26 +76,26 @@ a^{-N} \sum_{r = 0}^{2 N} a^{r}
 =
 a^{-N} \frac{a^{2 N + 1} - 1}{a - 1}.
 \end{dmath}
-
+%
 Since \( a^{2 N + 1} = e^{2 \pi j (n - m)} = 1 \), this sum is zero when \( n \ne m \).  This means that
-
+%
 \begin{equation}\label{eqndiscreteFourierMatrixForm:140}
 \sum_{k = -N}^N
 e^{ j (n -m )\omega_0 t_k} = (2 N + 1) \delta_{n,m},
 \end{equation}
-
+%
 which provides the desired Fourier inversion relation
-
+%
 %\begin{equation}\label{eqndiscreteFourierMatrixForm:160}
 \boxedEquation{eqndiscreteFourierMatrixForm:180}{
 X_m = \inv{2 N + 1} \sum_{k = -N}^N x(t_k) e^{-j m \omega_0 t_k}.
 }
 %\end{equation}
-
+%
 \paragraph{Matrix form}
-
+%
 The discrete time Fourier transform has been seen to have the form
-
+%
 \begin{subequations}
 \begin{equation}\label{eqn:discreteFourierMatrixForm:200}
 x_k = \sum_{n = -N}^N X_n e^{ 2 \pi j n k /(2 N + 1)}
@@ -104,9 +104,9 @@ x_k = \sum_{n = -N}^N X_n e^{ 2 \pi j n k /(2 N + 1)}
 X_n = \inv{2 N + 1} \sum_{k = -N}^N x_k e^{- 2 \pi j n k /(2 N + 1)}.
 \end{equation}
 \end{subequations}
-
+%
 A matrix representation of this form is desired.  Let
-
+%
 \begin{subequations}
 \begin{equation}\label{eqndiscreteFourierMatrixForm:240}
 \Bx =
@@ -129,7 +129,7 @@ X_{N}
 \end{bmatrix}
 \end{equation}
 \end{subequations}
-
+%
 \Cref{eqn:discreteFourierMatrixForm:200} written out in full is
 \begin{equation}\label{eqn:discreteFourierMatrixForm:280}
 \begin{aligned}
@@ -143,10 +143,10 @@ x_k
 &+ X_N e^{ 2 \pi j N k /(2 N + 1)}
 \end{aligned}
 \end{equation}
-
+%
 Following the FFT discussion in \citep{press1996numerical}, let
 \( W = e^{ 2 \pi j /(2 N + 1) } \).  The matrix relation is
-
+%
 \begin{equation}\label{eqn:discreteFourierMatrixForm:300}
 \Bx =
 \begin{bmatrix}
@@ -160,9 +160,9 @@ Following the FFT discussion in \citep{press1996numerical}, let
 \end{bmatrix}
 \BX
 \end{equation}
-
+%
 Similarly, from \cref{eqn:discreteFourierMatrixForm:220}, the inverse relation expands out to
-
+%
 \begin{equation}\label{eqn:discreteFourierMatrixForm:320}
 \begin{aligned}
 ( 2 N + 1 ) X_n
@@ -175,9 +175,9 @@ Similarly, from \cref{eqn:discreteFourierMatrixForm:220}, the inverse relation e
 &+ x_N e^{- 2 \pi j n N /(2 N + 1)},
 \end{aligned}
 \end{equation}
-
+%
 with a matrix form of
-
+%
 \begin{equation}\label{eqn:discreteFourierMatrixForm:340}
 ( 2 N + 1 ) \BX =
 \begin{bmatrix}
@@ -190,9 +190,9 @@ W^{\lr{N-1} N } & W^{\lr{N-1} \lr{N-1}} &\cdots & 1 &\cdots & W^{- \lr{N-1} \lr{
 W^{N N } & W^{N \lr{N-1}} &\cdots & 1 &\cdots & W^{- N \lr{ N-1 }} & W^{- N N} \\
 \end{bmatrix}
 \end{equation}
-
+%
 Letting
-
+%
 \begin{equation}\label{eqn:discreteFourierMatrixForm:360}
 \BF =
 \begin{bmatrix}
@@ -205,9 +205,9 @@ Letting
  W^{- N N } &  W^{\lr{1 - N} N }  & \cdots & 1 & \cdots &  W^{\lr{N-1} N }  &  W^{N N } \\
 \end{bmatrix},
 \end{equation}
-
+%
 the discrete transform pair has the following compactly matrix representation
-
+%
 \begin{subequations}
 \begin{equation}\label{eqn:discreteFourierMatrixForm:380}
 \Bx = \BF \BX
@@ -216,7 +216,7 @@ the discrete transform pair has the following compactly matrix representation
 \BX = \inv{2 N + 1} \overbar{\BF} \Bx,
 \end{equation}
 \end{subequations}
-
+%
 where \( \overbar{\BF} \) is the complex conjugate of \( \BF \).
-
+%
 %\EndArticle

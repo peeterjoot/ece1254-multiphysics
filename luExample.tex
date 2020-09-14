@@ -17,9 +17,9 @@
 %\generatetitle{Numeric LU factorization example}
 %\chapter{Numeric LU factorization example}
 %\label{chap:luExample}
-
+%
 Looking at a numeric example is helpful to get a better feel for LU factorization before attempting a Matlab implementation, as it strips some of the abstraction away.
-
+%
 \begin{equation}\label{eqn:luExample:20}
 M =
 \begin{bmatrix}
@@ -28,9 +28,9 @@ M =
 3 & 1 & 2 \\
 \end{bmatrix}.
 \end{equation}
-
+%
 This matrix was picked to avoid having to think of selecting the right pivot row when performing the \( L U \) factorization.  The first two operations give
-
+%
 \begin{equation}\label{eqn:luExample:40}
 \kbordermatrix{
 &  &   & \\
@@ -39,9 +39,9 @@ This matrix was picked to avoid having to think of selecting the right pivot row
 \lr{ r_3 \rightarrow r_3 - \frac{3}{5} r_1 } & 0 &2/5 & 7/5 \\
 }.
 \end{equation}
-
+%
 The row operations (left multiplication) that produce this matrix are
-
+%
 \begin{equation}\label{eqn:luExample:60}
 \begin{bmatrix}
 1 & 0 & 0 \\
@@ -60,7 +60,7 @@ The row operations (left multiplication) that produce this matrix are
 -3/5 & 0 & 1 \\
 \end{bmatrix}.
 \end{equation}
-
+%
 These operations happen to be commutative and also both invert simply.  The inverse operations are
 \begin{equation}\label{eqn:luExample:80}
 \begin{bmatrix}
@@ -80,9 +80,9 @@ These operations happen to be commutative and also both invert simply.  The inve
 3/5 & 0 & 1 \\
 \end{bmatrix}.
 \end{equation}
-
+%
 In matrix form the elementary matrix operations that produce the first stage of the Gaussian reduction are
-
+%
 \begin{equation}\label{eqn:luExample:100}
 \begin{bmatrix}
 1 & 0 & 0 \\
@@ -101,9 +101,9 @@ In matrix form the elementary matrix operations that produce the first stage of 
 0 &2/5 & 7/5 \\
 \end{bmatrix}.
 \end{equation}
-
+%
 Inverted that is
-
+%
 \begin{equation}\label{eqn:luExample:120}
 \begin{bmatrix}
 5 & 1 & 1 \\
@@ -122,15 +122,15 @@ Inverted that is
 0 &2/5 & 7/5 \\
 \end{bmatrix}.
 \end{equation}
-
+%
 This is the first stage of the LU decomposition, although the U matrix is not yet in upper triangular form.  With the pivot row in the desired position already, the last row operation to perform is
-
+%
 \begin{equation}\label{eqn:luExample:140}
 r_3 \rightarrow r_3 - \frac{2/5}{5/13} r_2 = r_3 - \frac{2}{13} r_2.
 \end{equation}
-
+%
 The final stage of this Gaussian reduction is
-
+%
 \begin{equation}\label{eqn:luExample:160}
 \begin{bmatrix}
 1 & 0 & 0 \\
@@ -150,7 +150,7 @@ The final stage of this Gaussian reduction is
 \end{bmatrix}
 = U,
 \end{equation}
-
+%
 so the desired lower triangular matrix factor is
 \begin{equation}\label{eqn:luExample:180}
 \begin{bmatrix}
@@ -171,14 +171,14 @@ so the desired lower triangular matrix factor is
 \end{bmatrix}
 = L.
 \end{equation}
-
+%
 A bit of Matlab code easily verifies that the above manual computation recovers \( M = L U \)
-
+%
 \begin{verbatim}
 l = [ 1 0 0 ; 2/5 1 0 ; 3/5 2/13 1 ] ;
 u = [ 5 1 1 ; 0 13/5 18/5 ; 0 0 11/13 ] ;
 m = l * u
 \end{verbatim}
-
+%
 %\EndArticle
 %\EndNoBibArticle

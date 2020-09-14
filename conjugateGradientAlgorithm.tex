@@ -15,9 +15,9 @@ The \textAndIndex{conjugate gradient} algorithm presented in the slides (without
 \STATE \( \Bd^{(k+1)} = \Br^{(k+1)} - \beta_k \Bd^{(k)} \)
 \UNTIL{converged}
 }
-
+%
 The repeated calculations are undesirable for actually coding this algorithm.  First introduce a temporary for the matrix product
-
+%
 \makealgorithm{Conjugate gradient with temporaries.}{alg:conjugateGradientAlgorithm:402}{
 \STATE \( \Bd^{(0)} = \Br^{(0)} \)
 \REPEAT
@@ -29,20 +29,20 @@ The repeated calculations are undesirable for actually coding this algorithm.  F
 \STATE \( \Bd^{(k+1)} = \Br^{(k+1)} - \beta_k \Bd^{(k)} \)
 \UNTIL{converged}
 }
-
+%
 This has a lot more computation than the algorithm specified in \citep{shewchuk1994introduction} \S B.2.  It looks like the orthogonality properties can be used to recast the \( \Bd^{(k)} \cdot \Br^{(k)} \) products in terms of \( \Br^{(k)} \)
-
+%
 \begin{equation}\label{eqn:conjugateGradientAlgorithm:400}
 \lr{ \Bd^{(k)} }^\T \Br^{(k)}
 =
 \Br^{(k)} \cdot \lr{ \Br^{(k)} + \beta_{k-1} \Bd^{(k-1) }
 }.
 \end{equation}
-
+%
 Since the new residual is orthogonal to all the previous search directions \( \Br^{(k)} \cdot \Bd^{(k-1)} = 0 \), the \( \beta_{k-1} \) term is killed leaving just \( \Br^{(k)} \cdot \Br^{(k)} \).
-
+%
 The numerator of \( \beta_k \) can be tackled by noting that the transformed direction vector \( \Bq \) is a scaled difference of residuals.  Taking dot products
-
+%
 \begin{dmath}\label{eqn:conjugateGradientAlgorithm:420}
 \Bq \cdot \Br^{(k+1)}
 =
@@ -52,9 +52,9 @@ The numerator of \( \beta_k \) can be tackled by noting that the transformed dir
 =
 -\inv{\alpha_k} \Br^{(k+1)} \cdot \Br^{(k+1)}.
 \end{dmath}
-
+%
 This gives
-
+%
 \begin{subequations}
 \begin{equation}\label{eqn:conjugateGradientAlgorithm:440}
 \alpha_k = \frac{ \lr{ \Br^{(k)} }^\T \Br^{(k)} }{ \lr{ \Bd^{(k)} }^\T \Bq }
@@ -63,18 +63,18 @@ This gives
 \beta_k = -\frac{ \lr{\Br^{(k+1)}}^\T \Br^{(k+1)} }{ \alpha_k \Bq^\T \Bd^{(k)} },
 \end{equation}
 \end{subequations}
-
+%
 A final elimination of \( \alpha_k \) from \cref{eqn:conjugateGradientAlgorithm:460} gives
-
+%
 \begin{equation}\label{eqn:conjugateGradientAlgorithm:480}
 \beta_k =
 -\frac{ \lr{\Br^{(k+1)}}^\T \Br^{(k+1)} }{
 \lr{ \Br^{(k)} }^\T \Br^{(k)}
 }.
 \end{equation}
-
+%
 All the pieces put together yield
-
+%
 \makealgorithm{Optimized conjugate gradient.}{alg:conjugateGradientAlgorithm:403}{
 \STATE \( \Bd^{(0)} = \Br^{(0)} \)
 \REPEAT
@@ -90,11 +90,11 @@ All the pieces put together yield
 \STATE \( \Bd^{(k+1)} = \Br^{(k+1)} - \beta_k \Bd^{(k)} \)
 \UNTIL{converged}
 }
-
+%
 This is now consistent with eqns 45-49 of \citep{shewchuk1994introduction}, with the exception that the sign of the \( \beta_k \) term has been flipped.
-
+%
 Since all the previous state does not have to be tracked the indexes can be dropped after introducing a couple temporary variables for the squared residuals
-
+%
 \makealgorithm{Optimized conjugate gradient, more temporaries.}{alg:conjugateGradientAlgorithm:404}{
 \STATE \( \Bx = \Bx^{(0)} \)
 \STATE \( \Bq = M \Bx \)
@@ -112,12 +112,12 @@ Since all the previous state does not have to be tracked the indexes can be drop
 \STATE \( \Bd = \Br + \beta \Bd \)
 \UNTIL{converged}
 }
-
+%
 This is coded in \nbcite{ps2a:conjugateGradientPainlessB2.m}{ps2a/conjugateGradientPainlessB2.m}.  That implementation allows for a preconditioner, but applies the preconditioner in a dump and inefficient way.
-
+%
 \paragraph{CG with preconditioning}
 \index{conjugate gradient!preconditioning}
-
+%
 %%%This is now in good shape to consider application of a preconditioner.  Solution of the problem \( N \By = \Bc \), given the variables
 %%%
 %%%\begin{equation}\label{eqn:conjugateGradientAlgorithm:n}
@@ -232,9 +232,9 @@ This is coded in \nbcite{ps2a:conjugateGradientPainlessB2.m}{ps2a/conjugateGradi
 %%%\RETURN \( P^{-1} \Bz \)
 %%%\end{algorithmic}
 %%%
-
+%
 An optimized preconditioned CG algorithm can be found in \citep{quarteroni2007numerical} \S 4.3.5.  Given \( \Bx^{(0)} \), that algorithm is
-
+%
 \makealgorithm{Conjugate gradient with preconditioning.}{alg:conjugateGradientAlgorithm:405}{
 \STATE \( \Br^{(0)} = \Bb - A \Bx^{(0)} \)
 \STATE \( \Bz^{(0)} = P^{-1} \Br^{(0)} \)
@@ -248,9 +248,9 @@ An optimized preconditioned CG algorithm can be found in \citep{quarteroni2007nu
 \STATE \( \Bp^{(k+1)} = \Bz^{(k+1)} + \beta_k \Bp^{(k)} \)
 \UNTIL{converged}
 }
-
+%
 To adapt this to code, drop the indexes and introduce some temporaries
-
+%
 \makealgorithm{Conjugate gradient with preconditioning and temporaries.}{alg:conjugateGradientAlgorithm:406}{
 \STATE \( \Br = \Bb - A \Bx \)
 \STATE \( P \Bz = \Br \)
@@ -268,5 +268,5 @@ To adapt this to code, drop the indexes and introduce some temporaries
 \STATE \( \Bp = \Bz + \beta \Bp \)
 \UNTIL{converged}
 }
-
+%
 This is coded in \nbcite{ps2a:conjugateGradientQuarteroniPrecond.m}{ps2a/conjugateGradientQuarteroniPrecond.m}

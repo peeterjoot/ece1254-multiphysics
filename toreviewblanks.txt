@@ -1,14 +1,3 @@
-conjugateGradientAlgorithm.tex
-currentBookCopyright.tex
-diodeRLCSample.tex
-discreteFourierInversion.tex
-discreteFourierMatrixForm.tex
-laplaceTransformVec.tex
-luAlgorithm.tex
-luExample.tex
-luExample2.tex
-svdNotes.tex
-theorems.tex
 multiphysicsL1.tex
 multiphysicsL2.tex
 multiphysicsL3.tex
@@ -40,5 +29,3 @@ multiphysicsProblemSet2bProblem1.tex
 multiphysicsProblemSet2bProblem2.tex
 multiphysicsProblemSet3aProblem1.tex
 multiphysicsProblemSet3bProblem1.tex
-simpleNortonEquivalents.tex
-stabilityLDEandDiscreteTime.tex

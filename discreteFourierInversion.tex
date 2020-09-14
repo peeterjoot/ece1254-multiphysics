@@ -3,7 +3,7 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 To find \( X_n \) evaluate the sum
-
+%
 \begin{equation}\label{eqn:discreteFourier:80}
 \begin{aligned}
 \sum_{k = -N}^N &x(t_k) e^{-j m \omega_0 t_k} \\
@@ -19,10 +19,10 @@ e^{-j m \omega_0 t_k} \\
 e^{ j (n -m )\omega_0 t_k}
 \end{aligned}
 \end{equation}
-
+%
 This interior sum has the value \( 2 N + 1 \) when \( n = m \).  For \( n \ne m \), and
 \( a = e^{j (n -m ) \frac{2 \pi}{2 N + 1}} \), this is
-
+%
 \begin{dmath}\label{eqn:discreteFourier:100}
 \sum_{k = -N}^N
 e^{ j (n -m )\omega_0 t_k}
@@ -38,16 +38,16 @@ a^{-N} \sum_{r = 0}^{2 N} a^{r}
 =
 a^{-N} \frac{a^{2 N + 1} - 1}{a - 1}.
 \end{dmath}
-
+%
 Since \( a^{2 N + 1} = e^{2 \pi j (n - m)} = 1 \), this sum is zero when \( n \ne m \).  This means that
-
+%
 \begin{equation}\label{eqn:discreteFourier:120}
 \sum_{k = -N}^N
 e^{ j (n -m )\omega_0 t_k} = (2 N + 1) \delta_{n,m}.
 \end{equation}
-
+%
 Substitution back into \cref{eqn:discreteFourier:80} proves the Fourier inversion relation \cref{eqn:discreteFourier:60}.
-
+%
 %which provides the desired Fourier inversion relation
 %which provides the desired Fourier inversion relation
 %
