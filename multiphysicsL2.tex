@@ -59,9 +59,7 @@ unknown node voltages \index{node voltage} and \(B\) unknown branch currents \in
    \item 3: \(i_{\textrm{C}} - i_{\textrm{S},\textrm{C}} = 0\)
    \item 4: \(-i_{\textrm{S},\textrm{A}} - i_{\textrm{S},\textrm{B}} + i_{\textrm{D}} - i_{\textrm{C}} = 0\)
 \end{itemize}
-
 Grouping unknown currents, this is
-
 \begin{itemize}
    \item 0: \(i_{\textrm{A}} + i_{\textrm{E}} - i_{\textrm{D}} = 0\)
    \item 1: \(-i_{\textrm{A}} + i_{\textrm{B}} = -i_{\textrm{S},\textrm{A}}\)
@@ -70,10 +68,9 @@ Grouping unknown currents, this is
    \item 4: \(i_{\textrm{D}} - i_{\textrm{C}} = i_{\textrm{S},\textrm{A}} + i_{\textrm{S},\textrm{B}}\)
 \end{itemize}
 
-Note that one of these equations is redundant (sum 1-4).  In a circuit with
-\(N\)
-nodes, are are at most \(N-1\) independent KCLs.  In matrix form
-
+Note that one of these equations is redundant (sum 1-4).
+In a circuit with \(N\) nodes, are at most \(N-1\) independent KCLs.
+In matrix form
 \begin{equation}\label{eqn:multiphysicsL2:20}
 \begin{bmatrix}
    -1 & 1 & 0 & 0 & 0 \\

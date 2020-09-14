@@ -1,3 +1,7 @@
+- review blank lines in files:
+
+   ./toreviewblanks.txt
+
 - for the press1996numerical (numerical methods), a chapter reference would be better.
 
 - have a mix of bold and non-bold case for matrices.
