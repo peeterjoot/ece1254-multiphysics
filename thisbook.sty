@@ -1,6 +1,13 @@
 %-----------------------------------------
 \usepackage{macros_cal}
 
+%----------------------------------------
+\newcommand{\mychapter}[1]{%
+\chapter{#1}%
+\thispagestyle{empty}%
+}
+%-----------------------------------------
+
 %--------------------------------------------------------------------
 \usepackage{censor}
 %--------------------------------------------------------------------
@@ -139,3 +146,10 @@
 \newcommand{\multiphysicschapcite}[1]{\cref{chap:#1}}
 
 %--------------------------------------------------------------------
+
+%% amsthm Command openbox already defined
+%% https://tex.stackexchange.com/a/41553/15
+%% alternatively ( https://tex.stackexchange.com/a/386742/15 )
+%% \let\openbox\undefined
+%\let\openbox\relax
+%\usepackage{amsthm}
