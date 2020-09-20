@@ -11,13 +11,3 @@ multiphysicsL9.tex
 multiphysicsL10.tex
 multiphysicsL11.tex
 multiphysicsL12.tex
-multiphysicsL12DampedNewtons.tex
-multiphysicsL13.tex
-multiphysicsL13SingularJacobian.tex
-multiphysicsL14.tex
-multiphysicsL15.tex
-multiphysicsL16.tex
-multiphysicsL17.tex
-multiphysicsL17ModelOrder.tex
-multiphysicsL18.tex
-multiphysicsL19.tex
