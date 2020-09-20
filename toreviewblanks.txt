@@ -1,13 +1,5 @@
-multiphysicsL1.tex
-multiphysicsL2.tex
-multiphysicsL3.tex
 multiphysicsL4.tex
-multiphysicsL5.tex
 multiphysicsL6.tex
 multiphysicsL7.tex
-multiphysicsL7B.tex
-multiphysicsL8.tex
 multiphysicsL9.tex
 multiphysicsL10.tex
-multiphysicsL11.tex
-multiphysicsL12.tex

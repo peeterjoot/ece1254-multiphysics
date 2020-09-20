@@ -3,8 +3,8 @@ ece1254.V0.1.9.pdf
 - update email address
 - spell check rules and spellcheck pass.
 - fix listing hyphenation
-- remove some blank lines.
 - thethe.py review.
+- brute force pruing of blank lines.
 - convert to 6x9 format.
 
 ===================================================================================
