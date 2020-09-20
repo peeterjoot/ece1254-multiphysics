@@ -14,18 +14,18 @@
 %\beginArtNoToc
 %\generatetitle{ECE1254H Modeling of Multiphysics Systems.  Lecture 7: Sparse factorization and iterative methods.  Taught by Prof.\ Piero Triverio}
 \label{chap:multiphysicsL7}
-
+%
 %\section{Disclaimer}
 %
 %Peeter's lecture notes from class.  These may be incoherent and rough.
 %
 \section{Fill ins}
 \index{fill ins}
-
+%
 The problem of fill ins in LU computations arise in locations where rows and columns cross over zero positions.
-
+%
 Rows and columns can be permuted to deal with these.  Here is an ad-hoc permutation of rows and columns that will result in less fill ins.
-
+%
 \begin{equation}\label{eqn:multiphysicsL7:180}
 \begin{aligned}
 &
@@ -130,12 +130,12 @@ b_3 \\
 \end{bmatrix} \\
 \end{aligned}
 \end{equation}
-
+%
 \section{Markowitz product}
 \index{Markowitz!product}
-
+%
 To facilitate such permutations the Markowitz product that estimates the amount of fill in required.
-
+%
 \makedefinition{Markowitz product.}{dfn:multiphysicsL7:20}{
 \begin{equation*}
 \begin{aligned}
@@ -146,7 +146,7 @@ To facilitate such permutations the Markowitz product that estimates the amount 
 \end{equation*}
 }
 In \citep{markowitz1957elimination} it is stated ``A still simpler alternative, which seems adequate generally, is to choose the pivot which minimizes the number of coefficients modified at each step (excluding those which are eliminated at the particular step).  This is equivalent to choosing the non-zero element with minimum \( (\rho_i - 1 )(\sigma_j -1) \).''
-
+%
 Note that this product is applied only to \( i j \) positions that are non-zero, something not explicitly mentioned in the slides, nor in other locations like \citep{pivotingSparsity}.
 \makeexample{Markowitz product.}{example:multiphysicsL7:200}{
 %In the slides the Markowitz product is computed for each of the diagonal elements, and the example looks like the product is really the product of the number of non-zero values in that row and column with the diagonal values excepted.  That seems to differ from the definition, and also differs from the description in
@@ -182,11 +182,11 @@ Swap rows \( j \leftrightarrow i \) and columns \( j \leftrightarrow i \)
 \item
 Factor the new row \( i \) and update Markowitz products
 \end{itemize}
-
+%
 \makeexample{Markowitz reordering.}{example:multiphysicsL7:280}{
-
+%
 Looking at the Markowitz products \cref{eqn:multiphysicsL7:280} a swap of rows and columns \( 1, 4 \) gives the modified matrix
-
+%
 \begin{equation}\label{eqn:multiphysicsL7:300}
 \begin{bmatrix}
 i & 0 & h & 0 \\
@@ -195,9 +195,9 @@ i & 0 & h & 0 \\
 0 & a & b & c \\
 \end{bmatrix}
 \end{equation}
-
+%
 In this case, this reordering has completely avoided any requirement to do any actual Gaussian operations for this first stage reduction.
-
+%
 Presuming that the Markowitz products for the remaining 3x3 submatrix are only computed from that submatrix, the new products are
 \begin{equation}\label{eqn:multiphysicsL7:320}
 \begin{bmatrix}
@@ -207,7 +207,7 @@ Presuming that the Markowitz products for the remaining 3x3 submatrix are only c
 & 2 & 4 & 2 \\
 \end{bmatrix}.
 \end{equation}
-
+%
 The
 pivot position
 contains a minimal product, and
@@ -218,7 +218,7 @@ happens to lie on the diagonal.  Note that it is not necessarily the best for nu
 It is possible to interpret the Markowitz products on the diagonal as connectivity of a graph that represents the interconnections of the nodes.  Consider the circuit of \cref{fig:lecture7:lecture7Fig2} as an example
 %\imageFigure{../figures/ece1254-multiphysics/lecture7Fig2}{Simple circuit}{fig:lecture7:lecture7Fig2}{0.3}
 \imageFigure{../figures/ece1254-multiphysics/simple-circuit-2.pdf}{Simple circuit.}{fig:lecture7:lecture7Fig2}{0.3}
-
+%
 The system equations for this circuit is of the form
 \begin{equation}\label{eqn:multiphysicsL7:340}
 \begin{bmatrix}
@@ -244,7 +244,7 @@ i \\
 x \\
 \end{bmatrix}.
 \end{equation}
-
+%
 The Markowitz products along the diagonal are
 \begin{equation}\label{eqn:multiphysicsL7:360}
 \begin{aligned}
@@ -261,7 +261,7 @@ Here a 5th node was introduced for the current \( i \) between nodes \( 4 \) and
 Observe that the Markowitz product of this node was counted as the number of non-zero values excluding the \( 5,5 \) matrix position.
 However, that doesn't matter too much since a Markowitz swap of row/column 1 with row/column 5 would put a zero in the \( 1,1 \) position of the matrix, which is not desirable.
 Permutations of zero diagonal positions will have to be restricted to pivots required for numerical stability, or taken into account with a more advanced zero fill avoidance algorithm.
-
+%
 The minimum diagonal Markowitz products are in positions 2 or 4, with respective Markowitz reorderings of the form
 \begin{equation}\label{eqn:multiphysicsL7:380}
 \begin{bmatrix}
@@ -312,7 +312,7 @@ i \\
 x \\
 \end{bmatrix}.
 \end{equation}
-
+%
 The original system had 7 zeros that could potentially be filled in the remaining \( 4 \times 4 \) submatrix.  After a first round of Gaussian elimination, the system matrices have the respective forms
 \begin{subequations}
 \begin{equation}\label{eqn:multiphysicsL7:420}
@@ -334,7 +334,7 @@ x &  0 & 0 & x & -1 \\
 \end{bmatrix}
 \end{equation}
 \end{subequations}
-
+%
 The remaining \( 4 \times 4 \) submatrices have interconnect graphs sketched in \cref{fig:lecture7:lecture7Fig4}.
 \imageFigure{../figures/ece1254-multiphysics/lecture7Fig4}{Graphs after one round of Gaussian elimination.}{fig:lecture7:lecture7Fig4}{0.3}
 From a graph point of view, the objective is to delete the most connected nodes.  This can be driven by the Markowitz products along the diagonal or directly with graph methods.

@@ -1,5 +1,3 @@
-multiphysicsL4.tex
-multiphysicsL6.tex
-multiphysicsL7.tex
 multiphysicsL9.tex
-multiphysicsL10.tex
+# looses float:
+#multiphysicsL10.tex
