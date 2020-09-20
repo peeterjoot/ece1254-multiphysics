@@ -18,53 +18,41 @@
 %\generatetitle{ECE1254H Modeling of Multiphysics Systems.  Lecture 10: Nonlinear systems.  Taught by Prof.\ Piero Triverio}
 %\chapter{Nonlinear systems}
 \label{chap:multiphysicsL10}
-
 %\section{Disclaimer}
 %
 %Peeter's lecture notes from class.  These may be incoherent and rough.
 %
 \section{Nonlinear systems}
 \index{nonlinear systems}
-
 On slides, some examples to motivate:
-
 \begin{itemize}
 \item struts
 \item fluids
 \item diode (exponential)
 
 Example in \cref{fig:lecture10:lecture10Fig1}.
-
 %\imageFigure{../figures/ece1254-multiphysics/lecture10Fig1}{Diode circuit}{fig:lecture10:lecture10Fig1}{0.2}
 \imageFigure{../figures/ece1254-multiphysics/diode-circuit-voltage-source.pdf}{Diode circuit.}{fig:lecture10:lecture10Fig1}{0.2}
 
 \begin{equation}\label{eqn:multiphysicsL10:20}
 I_{\textrm{d}} = I_{\textrm{s}} \lr{ e^{V_{\textrm{d}}/V_{\textrm{T}}} - 1 } = \frac{10 - V_{\textrm{d}}}{10}.
 \end{equation}
-
 \end{itemize}
-
 \section{Richardson and Linear Convergence}
-
 Seeking the exact solution \( x^\conj \) for
-
 \begin{equation}\label{eqn:multiphysicsL10:40}
 f(x^\conj) = 0,
 \end{equation}
 
 Suppose that
-
 \begin{equation}\label{eqn:multiphysicsL10:60}
-x^{k + 1} = x^k + f(x^k)
+x^{k + 1} = x^k + f(x^k).
 \end{equation}
 
 If \( f(x^k) = 0 \) then the iteration has converged at \( x^k = x^\conj \).
-
 \paragraph{Convergence analysis}
 \index{Richardson!convergence}
-
 Write the iteration equations at a sample point and the solution as
-
 \begin{subequations}
 \begin{equation}\label{eqn:multiphysicsL10:80}
 x^{k + 1} = x^k + f(x^k)
@@ -75,18 +63,16 @@ x^{\conj} = x^\conj +
 {
 f(x^\conj)
 }
-{\(=0\)}
+{\(=0\)}.
 \end{equation}
 \end{subequations}
 
 The difference is
-
 \begin{equation}\label{eqn:multiphysicsL10:120}
 x^{k+1} - x^\conj = x^k - x^\conj + \lr{ f(x^k) - f(x^\conj) }.
 \end{equation}
 
 The last term can be quantified using the mean value theorem \ref{thm:multiphysicsL10:140}, giving
-
 \begin{dmath}\label{eqn:multiphysicsL10:140}
 x^{k+1} - x^\conj
 = x^k - x^\conj +
@@ -98,7 +84,6 @@ x^{k+1} - x^\conj
 \end{dmath}
 
 The absolute value is thus
-
 \begin{equation}\label{eqn:multiphysicsL10:160}
 \Abs{x^{k+1} - x^\conj } =
 \Abs{ x^k - x^\conj }
@@ -109,22 +94,18 @@ The absolute value is thus
 Convergence is obtained when \( \Abs{ 1 + \evalbar{\PD{x}{f}}{\tilde{x}}  } < 1 \) in the iteration region.  This could easily be highly dependent on the initial guess.
 
 A more accurate statement is that convergence is obtained provided
-
 \begin{equation}\label{eqn:multiphysicsL10:180}
 \Abs{
 1 + \PD{x}{f} }
 \le \gamma < 1
 \qquad \forall \tilde{x} \in [ x^\conj - \delta, x^\conj + \delta ],
 \end{equation}
-
 and \( \Abs{x^0 - x^\conj } < \delta \).  This is illustrated in \cref{fig:lecture10:lecture10Fig3}.
-
 \imageFigure{../figures/ece1254-multiphysics/lecture10Fig3}{Convergence region.}{fig:lecture10:lecture10Fig3}{0.2}
 
 It could very easily be difficult to determine the convergence regions.
 
 There are some problems
-
 \begin{itemize}
 \item Convergence is only linear
 \item \( x, f(x) \) are not in the same units (and potentially of different orders).  For example, \(x\) could be a voltage and \( f(x) \) could be a circuit current.
@@ -132,17 +113,13 @@ There are some problems
 \end{itemize}
 
 Examples where this may be desirable include
-
 \begin{itemize}
 \item Spice Gummal Poon transistor model.  Lots of diodes, ...
 \item Mosfet model (30 page spec, lots of parameters).
 \end{itemize}
-
 \section{Newton's method}
 \index{Newton's method!single variable}
-
 The core idea of this method is sketched in \cref{fig:lecture10:lecture10Fig4}.  To find the intersection with the x-axis, follow the slope closer to the intersection.
-
 \imageFigure{../figures/ece1254-multiphysics/lecture10Fig4}{Newton's method.}{fig:lecture10:lecture10Fig4}{0.2}
 
 To do this, expand \( f(x) \) in Taylor series to first order around \( x^k \), and then solve for \( f(x) = 0 \) in that approximation
