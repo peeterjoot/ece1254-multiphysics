@@ -1,0 +1,13 @@
+These are course notes for "Modeling of Multiphysics Systems (ECE1254H)", taken fall 2014 at UofT, taught by Prof. Piero Triverio.
+
+The basic theme was, “Well, we know how to solve circuit problems… so, let’s make all of physics look like circuit problems.”  Along the way we covered lots of interesting numerical methods and topics, including:
+
+- Tableau method
+- Modified nodal analysis
+- LU decomposition
+- Conjugate gradient method
+- Sparse systems
+- Newton-Raphson method
+- Euler and trapezoidal rule, accuracy, stability
+- Model order reduction of linear systems
+- Modeling experimental data

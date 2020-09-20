@@ -6,6 +6,7 @@ ece1254.V0.1.9.pdf
 - thethe.py review.
 - brute force pruing of blank lines.
 - convert to 6x9 format.
+- add: backcover.txt
 
 ===================================================================================
 v.4:
