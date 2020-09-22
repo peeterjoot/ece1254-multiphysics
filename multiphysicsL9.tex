@@ -24,7 +24,7 @@
 %
 %Peeter's lecture notes from class.  These may be incoherent and rough.
 %
-\section{Conjugate gradient convergence}
+\section{Conjugate gradient convergence.}
 \index{conjugate gradient!convergence}
 %
 For \( k \ll n \), convergence orders are given in \cref{tab:multiphysicsL9:20}.  A matrix norm, similar to \( \Norm{ \Bx } = \sqrt{ \Bx^\T \Bx } \), is defined
@@ -56,7 +56,7 @@ K(M) = \frac
 %
 Some fast ways to estimate the conditioning number are required.
 %
-\sectionAndIndex{Gershgorin circle theorem}
+\sectionAndIndex{Gershgorin circle theorem.}
 %
 \maketheorem{Gershgorin circle theorem.}{thm:multiphysicsL9:1}{
 Given \( M \), for any eigenvalue of \( M \) there is an \( i \in [1, n] \) such that
@@ -163,7 +163,7 @@ These are two circles at \( z = 1 \) of radius 1, and two circles at \( z = 2 \)
 \imageFigure{../figures/ece1254-multiphysics/GershgorinL9Fig9}{Gershgorin circles for 4 eigenvalue system.}{fig:GershgorinL9:GershgorinL9Fig9}{0.3}
 }
 %
-\section{Preconditioning}
+\section{Preconditioning.}
 \index{preconditioning}
 %
 Goal is to take
@@ -180,7 +180,7 @@ P^{-1} M \Bx = P^{-1} \Bb.
 %
 This system has the same solution, but allows for choosing \( P \) to maximize the convergence speed.
 %
-\section{Symmetric preconditioning}
+\section{Symmetric preconditioning.}
 \index{symmetric preconditioning}
 %
 Because the conjugate gradient methods requires a symmetric matrix, it is desirable to pick a preconditioning method that preserves the symmetric (and positive definite) nature of the matrix.  This is possible by splitting \( P \) into square root factors
@@ -257,7 +257,7 @@ so that the Gershgorin circles can all be found within a small radius of unity a
 %
 \imageFigure{../figures/ece1254-multiphysics/lecture9Fig8}{Gershgorin circles after preconditioning.}{fig:lecture9:lecture9Fig8}{0.3}
 %
-\section{Preconditioned conjugate gradient}
+\section{Preconditioned conjugate gradient.}
 \index{conjugate gradient!preconditioned}
 %
 It is possible to avoid inverting the preconditioner by requiring that the LU decomposition of \( P \) be easily computed.  Then

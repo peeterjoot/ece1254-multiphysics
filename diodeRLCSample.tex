@@ -240,7 +240,7 @@ in each case the time domain sampling vectors are related to the Fourier compone
 \Bx = \BF \BX.
 \end{equation}
 %
-\section{Block matrix form, with physical parameter ordering}
+\section{Block matrix form, with physical parameter ordering.}
 %
 To understand how to put \cref{eqn:diodeRLCSample:240} in block matrix form, it is helpful to consider a specific example.  Consider again the specific example of the RLC circuit above, which has the form
 %
@@ -543,7 +543,7 @@ j \omega_0 c_{rs} \BN
 }
 %\end{equation}
 %
-\section{Block matrix form, with frequency ordering}
+\section{Block matrix form, with frequency ordering.}
 %
 It turns out that a better way of ordering the vector of Fourier components is using a frequency ordering that interleaves the physical parameters.  With such an ordering the DFT MNA equations are
 %
@@ -651,7 +651,7 @@ I_{1}^{(L)} \\
 %
 This ordering matches that of \citep{giannini2004NonlinearMicrowaveCircuitDesign}.
 %
-\section{Representing the linear sources}
+\section{Representing the linear sources.}
 %
 Assuming real sources with frequencies that are only multiples of the fundamental harmonic, a reasonable way to represent them in storage is with a pair of matrices
 %
@@ -708,7 +708,7 @@ If \( N = 2 \) was used, then we would have instead
 \end{bmatrix}.
 \end{equation}
 %
-\section{Representing nonlinear sources}
+\section{Representing nonlinear sources.}
 %
 The time domain MNA \cref{eqn:diodeRLCSample:40} include a wide range of matrix dimensions.  It is now clear how to handle the transition to the frequency domain for all the linear terms.  Working a simple diode example to understand how to handle the nonlinear terms is useful.  Consider the circuit of \cref{fig:diodeWithResistor:diodeWithResistorFig1}.
 %
@@ -907,7 +907,7 @@ this one Fourier coefficient vector is
 %
 This is now completely expressed in terms of the unknown Fourier component vectors, each a subset of the aggregated ``voltage'', range selectable with the Matlab operation \( \BV^{(i)} = \BV(i:R:end) \).
 %
-\section{Newton's method}
+\section{Newton's method.}
 %
 In order to solve the system, Newton's method on the Fourier coefficients is required.  Solutions to \( \calF(\BV) = 0 \) are sought, where
 %
@@ -1076,7 +1076,7 @@ Where \( \PDi{\BV}{E_{k}^{(i)}} \) is the kth row of \( \BJ_{\BE^{(i)}} \).  The
 %%%
 %%%Note that the \( q \) values are all integers in the range \( [0, 2 N ] \).
 %
-\section{A matrix formulation of Harmonic Balance nonlinear currents}
+\section{A matrix formulation of Harmonic Balance nonlinear currents.}
 %
 Because it was simple, the coordinate expansion of the Jacobian of the nonlinear currents above seemed like a good approach.  The end result of that Jacobian calculation was something that turned out to be impossibly slow to compute for larger \( N \).
 It seems plausible that eliminating the coordinate expansion,

@@ -2,7 +2,7 @@
 % Copyright © 2014 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-\section{Summary of factorization costs}
+\section{Summary of factorization costs.}
 \index{LU decomposition}
 \paragraph{LU (dense)}
 \begin{itemize}
@@ -18,7 +18,7 @@
 Computation can be affordable up to a few million elements.
 \paragraph{Iterative methods}
 Can be cheap if done right.  Convergence requires careful preconditioning.
-\section{Iterative methods}
+\section{Iterative methods.}
 Given an initial guess of \( \Bx_0 \), any iterative methods are generally of the form
 %
 \makealgorithm{Iterative methods.}{alg:multiphysicsL7B:1}{
@@ -30,7 +30,7 @@ Given an initial guess of \( \Bx_0 \), any iterative methods are generally of th
 The difference \( \Br \) is called the residual.  For as long as it is bigger than desired, continue improving the estimate \( \Bx_i \).
 %
 The matrix vector product \( M \Bx_i \), if dense, is of \( O(n^2) \).  Suppose, for example, that the solution can be found in ten iterations.  If the matrix is dense, performance can be of \( 10 \, O(n^2) \).  If sparse, this can be worse than just direct computation.
-\section{Gradient method}
+\section{Gradient method.}
 This is a method for iterative solution of the equation \( M \Bx = \Bb \).
 %
 This requires symmetric positive definite matrix \( M = M^\T \), with \( M > 0 \), for which an \textAndIndex{energy function} is defined
