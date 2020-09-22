@@ -5,7 +5,7 @@
 \paragraph{CG without preconditioning}
 \index{CG!see {conjugate gradient}}
 The \textAndIndex{conjugate gradient} algorithm presented in the slides (without preconditioning) was
-\makealgorithm{Conjugate gradient.}{alg:conjugateGradientAlgorithm:401}{
+\makealgorithm{Conjugate gradient (CG).}{alg:conjugateGradientAlgorithm:401}{
 \STATE \( \Bd^{(0)} = \Br^{(0)} \)
 \REPEAT
 \STATE \( \alpha_k = \frac{ \lr{ \Bd^{(k)} }^\T \Br^{(k)} }{ \lr{ \Bd^{(k)} }^\T M \Bd^{(k)} } \)
@@ -18,7 +18,7 @@ The \textAndIndex{conjugate gradient} algorithm presented in the slides (without
 %
 The repeated calculations are undesirable for actually coding this algorithm.  First introduce a temporary for the matrix product
 %
-\makealgorithm{Conjugate gradient with temporaries.}{alg:conjugateGradientAlgorithm:402}{
+\makealgorithm{CG with temporaries.}{alg:conjugateGradientAlgorithm:402}{
 \STATE \( \Bd^{(0)} = \Br^{(0)} \)
 \REPEAT
 \STATE \( \Bq = M \Bd^{(k)} \)
@@ -235,7 +235,7 @@ This is coded in \nbcite{ps2a:conjugateGradientPainlessB2.m}{ps2a/conjugateGradi
 %
 An optimized preconditioned CG algorithm can be found in \citep{quarteroni2007numerical} \S 4.3.5.  Given \( \Bx^{(0)} \), that algorithm is
 %
-\makealgorithm{Conjugate gradient with preconditioning.}{alg:conjugateGradientAlgorithm:405}{
+\makealgorithm{CG with preconditioning.}{alg:conjugateGradientAlgorithm:405}{
 \STATE \( \Br^{(0)} = \Bb - A \Bx^{(0)} \)
 \STATE \( \Bz^{(0)} = P^{-1} \Br^{(0)} \)
 \STATE \( \Bp^{(0)} = \Bz^{(0)} \)
@@ -251,7 +251,7 @@ An optimized preconditioned CG algorithm can be found in \citep{quarteroni2007nu
 %
 To adapt this to code, drop the indexes and introduce some temporaries
 %
-\makealgorithm{Conjugate gradient with preconditioning and temporaries.}{alg:conjugateGradientAlgorithm:406}{
+\makealgorithm{CG with preconditioning and temporaries.}{alg:conjugateGradientAlgorithm:406}{
 \STATE \( \Br = \Bb - A \Bx \)
 \STATE \( P \Bz = \Br \)
 \STATE \( \Bp = \Bz \)
