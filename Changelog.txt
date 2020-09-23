@@ -1,11 +1,11 @@
-ece1254.V0.1.9.pdf
+ece1254.V0.1.9-x.pdf
 
 - update email address
 - spell check rules and spellcheck pass.
 - fix listing hyphenation
 - thethe.py review.
 - brute force pruing of blank lines.
-- convert to 6x9 format.
+- convert to 6x9 format, and fix all the corresponding gutter issues.
 - add: backcover.txt
 
 ===================================================================================
