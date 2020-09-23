@@ -94,7 +94,7 @@
 % \grtsim (\ge \approx hybrid), and probably other stuff:
 \usepackage[]{amssymb}
 
-% with abbrev, can't tell if this is example or exercise.  Abbrev would be nice for 
+% with abbrev, can't tell if this is example or exercise.  Abbrev would be nice for
 % consistecy with fig. and eq. references.
 %\crefname{Exercise}{ex.}{ex.}
 %\Crefname{Exercise}{Ex.}{Ex.}
@@ -110,14 +110,14 @@
 \renewcommand{\theQuestion}{\alph{Question}}
 
 %--------------------------------------------------------------------
-% this fixme package + classicthesis + makeidx + hyperref 
+% this fixme package + classicthesis + makeidx + hyperref
 % interact oddly.
 % If I use it, then my index entries don't have hyperlinks anymore?
 
 %\usepackage[draft,english]{fixme}
 %\fxusetheme{color}
 
-% based on: 
+% based on:
 % \newcommand*\listfigurename{List of Figures}
 % "koma-script/scrreprt.cls"
 
@@ -126,7 +126,7 @@
 \newcommand{\fxwarning}[2]{}
 
 %--------------------------------------------------------------------
-% 
+%
 % index usage:
 %\index{gnat!size of}
 \RequirePackage{makeidx}
@@ -137,9 +137,9 @@
 \newcommand{\paragraphAndIndex}[1]{\paragraph{#1}\index{#1}}
 
 \usepackage{book_layout}
-\usepackage{macros_bm} 
+\usepackage{macros_bm}
 %--------------------------------------------------------------------
-% 
+%
 % example:
 %\multiphysicschapcite{nonIntegralBinomialSeries}
 %\newcommand{\multiphysicschapcite}[1]{\citep{ece1254:#1}}
@@ -153,3 +153,9 @@
 %% \let\openbox\undefined
 %\let\openbox\relax
 %\usepackage{amsthm}
+
+%-----------------------------------------
+% for {eqn:diodeRLCSample:320b}
+% https://stackoverflow.com/a/2789482/189270
+\setcounter{MaxMatrixCols}{14}
+

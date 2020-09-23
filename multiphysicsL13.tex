@@ -31,7 +31,8 @@
 %
 %\imageFigure{../figures/ece1254-multiphysics/lecture13Fig2}{Complex time dependent system.}{fig:lecture13:lecture13Fig2}{0.15}
 %
-\section{Assembling equations automatically for dynamical systems.}
+%\section{Assembling equations automatically for dynamical systems.}
+\section{Dynamical systems equation assembly.}
 %
 \index{modified nodal analysis!rc circuit}
 \makeexample{RC circuit.}{example:multiphysicsL13:220}{
@@ -65,15 +66,16 @@ The equations (KCLs) at each of the nodes are
 %
 This has the matrix form
 \begin{equation}\label{eqn:multiphysicsL13:140}
-\begin{bmatrix}
+\begin{aligned}
+&\begin{bmatrix}
 Z_1 + Z_2 & - Z_2 \\
 -Z_2 & Z_2 + Z_3
 \end{bmatrix}
 \begin{bmatrix}
 v_1(t) \\
 v_2(t)
-\end{bmatrix}
-+
+\end{bmatrix} \\
+&\qquad +
 \begin{bmatrix}
 C_1 + C_2 & -C_2 \\
 - C_2 & C_2 + C_3
@@ -81,7 +83,7 @@ C_1 + C_2 & -C_2 \\
 \begin{bmatrix}
 \frac{dv_1(t)}{dt} \\
 \frac{dv_2(t}{dt})
-\end{bmatrix}
+\end{bmatrix} 
 =
 \begin{bmatrix}
 1 & 0 \\
@@ -91,6 +93,7 @@ C_1 + C_2 & -C_2 \\
 i_{s,1}(t) \\
 i_{s,2}(t)
 \end{bmatrix}.
+\end{aligned}
 \end{equation}
 %
 %

@@ -41,7 +41,8 @@ The KCL equations for this circuit are
 With \( Z = 1/R \), these can be put into the standard MLN matrix form as
 %
 \begin{equation}\label{eqn:diodeRLCSample:20}
-\begin{bmatrix}
+\begin{aligned}
+&\begin{bmatrix}
 0 & 0 & 0 & 0 \\
 0 & Z & -Z & 1 \\
 0 & -Z & Z & 0 \\
@@ -52,8 +53,8 @@ v_1 \\
 v_2 \\
 v_3 \\
 i_{\textrm{L}} \\
-\end{bmatrix}
-+
+\end{bmatrix} \\
+&\qquad +
 \begin{bmatrix}
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 \\
@@ -87,6 +88,7 @@ i_{\textrm{s}}(t) \\
 \begin{bmatrix}
 e^{(v_2 - v_3)/v_{\textrm{T}}}
 \end{bmatrix}
+\end{aligned}
 \end{equation}
 %
 Let's write this as
@@ -219,10 +221,10 @@ W^{(c)}_{N} \\
 \end{bmatrix}.
 \end{equation}
 %
-With \( W = e^{ 2 \pi j /(2 N + 1) } \), and
+With \( W = e^{ 2 \pi j /(2 N + 1) } \), and \( \BF \) equals
 %
 \begin{equation}\label{eqn:diodeRLCSample:140}
-\BF =
+%\BF =
 \begin{bmatrix}
  W^{ N N } &  W^{ \lr{N-1} N }  & \cdots & 1 & \cdots &  W^{ -\lr{N-1} N }  &  W^{ -N N } \\
  W^{ N \lr{N-1} } &  W^{ \lr{N-1} \lr{N-1} }  & \cdots & 1 & \cdots &  W^{ -\lr{N-1} \lr{N-1} }  &  W^{ -N \lr{N-1} } \\
@@ -230,11 +232,11 @@ With \( W = e^{ 2 \pi j /(2 N + 1) } \), and
  1              &  1                      & 1      & 1 & 1      &  1                    &  1               \\
  \vdots              &  \vdots                      & \vdots      & \vdots & \vdots      &  \vdots                    &  \vdots               \\
  W^{ -N \lr{N-1} } &  W^{ -\lr{N-1} \lr{N-1} }  & \cdots & 1 & \cdots &  W^{ {N-1} \lr{N-1} }  &  W^{ N \lr{N-1} } \\
- W^{ -N N } &  W^{ -N N }  & \cdots & 1 & \cdots &  W^{ \lr{N-1} N }  &  W^{ N N } \\
-\end{bmatrix},
+ W^{ -N N } &  W^{ -N N }  & \cdots & 1 & \cdots &  W^{ \lr{N-1} N }  &  W^{ N N }
+\end{bmatrix}.
 \end{equation}
 %
-in each case the time domain sampling vectors are related to the Fourier components by relations of the form
+In each case the time domain sampling vectors are related to the Fourier components by relations of the form
 %
 \begin{equation}\label{eqn:diodeRLCSample:160}
 \Bx = \BF \BX.
@@ -249,20 +251,20 @@ To understand how to put \cref{eqn:diodeRLCSample:240} in block matrix form, it 
 0 & 0 & 0 & 0 \\
 0 & Z & -Z & 1 \\
 0 & -Z & Z + j \omega_0 n C & 0 \\
-0 & -1 & 0 & + j \omega_0 n L \\
+0 & -1 & 0 & + j \omega_0 n L
 \end{bmatrix}
 \begin{bmatrix}
 V_n^{(1)} \\
 V_n^{(2)} \\
 V_n^{(3)} \\
-I_n^{(L)} \\
+I_n^{(L)}
 \end{bmatrix}
 =
 \begin{bmatrix}
 I_n^{(1)} \\
 I_n^{(2)} \\
 I_n^{(3)} \\
-I_n^{(4)} \\
+I_n^{(4)}
 \end{bmatrix}
 \end{equation}
 %
@@ -270,24 +272,46 @@ Here the \( I^{(i)} \) terms are the DFT representations of both the linear and 
 %
 Suppose for example that \( N = 1 \).  One way to write \cref{eqn:diodeRLCSample:260} would be
 %
-\begin{equation}\label{eqn:diodeRLCSample:320}
-\begin{aligned}
-&
-\begin{bmatrix}
-I_{-1}^{(1)} \\
-I_0^{(1)} \\
-I_{1}^{(1)} \\
-I_{-1}^{(2)} \\
-I_0^{(2)} \\
-I_{1}^{(2)} \\
-I_{-1}^{(3)} \\
-I_0^{(3)} \\
-I_{1}^{(3)} \\
-I_{-1}^{(4)} \\
-I_0^{(4)} \\
-I_{1}^{(4)} \\
-\end{bmatrix}
-=
+\begin{equation}\label{eqn:diodeRLCSample:320a}
+\BI = \BG \BV + \BC \BV',
+\end{equation}
+where
+\begin{equation}\label{eqn:diodeRLCSample:320b}
+\BI =
+{\begin{bmatrix}
+I_{-1}^{(1)} &
+I_0^{(1)} &
+I_{1}^{(1)} &
+I_{-1}^{(2)} &
+I_0^{(2)} &
+I_{1}^{(2)} &
+I_{-1}^{(3)} &
+I_0^{(3)} &
+I_{1}^{(3)} &
+I_{-1}^{(4)} &
+I_0^{(4)} &
+I_{1}^{(4)}
+\end{bmatrix}}^\T,
+\end{equation}
+\begin{equation}\label{eqn:diodeRLCSample:320c}
+\BV =
+{\begin{bmatrix}
+V_{-1}^{(1)} &
+V_{0}^{(1)} &
+V_{1}^{(1)} &
+V_{-1}^{(2)} &
+V_{0}^{(2)} &
+V_{1}^{(2)} &
+V_{-1}^{(3)} &
+V_{0}^{(3)} &
+V_{1}^{(3)} &
+I_{-1}^{(L)} &
+I_{0}^{(L)} &
+I_{1}^{(L)}
+\end{bmatrix}}^\T,
+\end{equation}
+and \( \BG \) equals
+\begin{equation}\label{eqn:diodeRLCSample:320d}
 \left[
 \begin{array}{c|c|c|c}
 % row 1:
@@ -373,24 +397,12 @@ Z & 0 & 0 \\
 0 & 0 & 0 \\
 0 & 0 & 0 \\
 0 & 0 & 0 \\
-\end{matrix} \\
+\end{matrix}
 \end{array}
-\right]
-\begin{bmatrix}
-V_{-1}^{(1)} \\
-V_{0}^{(1)} \\
-V_{1}^{(1)} \\
-V_{-1}^{(2)} \\
-V_{0}^{(2)} \\
-V_{1}^{(2)} \\
-V_{-1}^{(3)} \\
-V_{0}^{(3)} \\
-V_{1}^{(3)} \\
-I_{-1}^{(L)} \\
-I_{0}^{(L)} \\
-I_{1}^{(L)} \\
-\end{bmatrix} \\
-&+
+\right],
+\end{equation}
+and where \( \BC \) equals
+\begin{equation}\label{eqn:diodeRLCSample:320e}
 \left[
 \begin{array}{c|c|c|c}
 % row 1:
@@ -478,22 +490,7 @@ j \omega_0 (-1) L & 0 & 0 \\
 0 & 0 & j \omega_0 (1) L \\
 \end{matrix} \\
 \end{array}
-\right]
-\begin{bmatrix}
-V_{-1}^{(1)} \\
-V_{0}^{(1)} \\
-V_{1}^{(1)} \\
-V_{-1}^{(2)} \\
-V_{0}^{(2)} \\
-V_{1}^{(2)} \\
-V_{-1}^{(3)} \\
-V_{0}^{(3)} \\
-V_{1}^{(3)} \\
-I_{-1}^{(L)} \\
-I_{0}^{(L)} \\
-I_{1}^{(L)} \\
-\end{bmatrix} \\
-\end{aligned}
+\right].
 \end{equation}
 %
 With a vector of Fourier coefficient vectors

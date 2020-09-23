@@ -148,7 +148,10 @@ Following the FFT discussion in \citep{press1996numerical}, let
 \( W = e^{ 2 \pi j /(2 N + 1) } \).  The matrix relation is
 %
 \begin{equation}\label{eqn:discreteFourierMatrixForm:300}
-\Bx =
+\Bx = \Bw \BX,
+\end{equation}
+where \( \Bw \) is
+\begin{equation}\label{eqn:discreteFourierMatrixForm:300b}
 \begin{bmatrix}
  W^{N N } &  W^{\lr{N-1} N }  & \cdots & 1 & \cdots &  W^{- \lr{N-1} N }  &  W^{- N N } \\
  W^{N \lr{N-1} } &  W^{\lr{N-1} \lr{N-1} }  & \cdots & 1 & \cdots &  W^{- \lr{N-1} \lr{N-1} }  &  W^{- N \lr{N-1} } \\
@@ -158,7 +161,6 @@ Following the FFT discussion in \citep{press1996numerical}, let
  W^{- N \lr{N-1} } &  W^{- \lr{N-1} \lr{N-1} }  & \cdots & 1 & \cdots &  W^{{N-1} \lr{N-1} }  &  W^{N \lr{N-1} } \\
  W^{- N N } &  W^{\lr{1 - N} N }  & \cdots & 1 & \cdots &  W^{\lr{N-1} N }  &  W^{N N } \\
 \end{bmatrix}
-\BX
 \end{equation}
 %
 Similarly, from \cref{eqn:discreteFourierMatrixForm:220}, the inverse relation expands out to
@@ -179,7 +181,10 @@ Similarly, from \cref{eqn:discreteFourierMatrixForm:220}, the inverse relation e
 with a matrix form of
 %
 \begin{equation}\label{eqn:discreteFourierMatrixForm:340}
-( 2 N + 1 ) \BX =
+( 2 N + 1 ) \BX = \BY,
+\end{equation}
+where \( \BY \) is
+\begin{equation}\label{eqn:discreteFourierMatrixForm:340}
 \begin{bmatrix}
 W^{- N N } & W^{- N \lr{N-1}} &\cdots & 1 &\cdots & W^{N \lr{ N-1 }} & W^{N N} \\
 W^{- \lr{N-1} N } & W^{- \lr{N-1} \lr{N-1}} &\cdots & 1 &\cdots & W^{\lr{N-1} \lr{ N-1 }} & W^{\lr{N-1} N} \\
@@ -188,13 +193,13 @@ W^{- \lr{N-1} N } & W^{- \lr{N-1} \lr{N-1}} &\cdots & 1 &\cdots & W^{\lr{N-1} \l
 \vdots               & \vdots                     &  \vdots    & \vdots & \vdots     & \vdots                      &  \vdots            \\
 W^{\lr{N-1} N } & W^{\lr{N-1} \lr{N-1}} &\cdots & 1 &\cdots & W^{- \lr{N-1} \lr{ N-1 }} & W^{- \lr{N-1} N} \\
 W^{N N } & W^{N \lr{N-1}} &\cdots & 1 &\cdots & W^{- N \lr{ N-1 }} & W^{- N N} \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
-Letting
+Let \( \BF \) equal
 %
 \begin{equation}\label{eqn:discreteFourierMatrixForm:360}
-\BF =
+%\BF =
 \begin{bmatrix}
  W^{N N } &  W^{\lr{N-1} N }  & \cdots & 1 & \cdots &  W^{- \lr{N-1} N }  &  W^{- N N } \\
  W^{N \lr{N-1} } &  W^{\lr{N-1} \lr{N-1} }  & \cdots & 1 & \cdots &  W^{- \lr{N-1} \lr{N-1} }  &  W^{- N \lr{N-1} } \\
