@@ -89,7 +89,8 @@ X_n &= \inv{2 N + 1} \sum_{k = -N}^N x_k e^{- 2 \pi j n k /(2 N + 1)}.
 \end{aligned}
 \end{equation}
 
-With \(
+With 
+\begin{equation}\label{eqn:HarmonicBalanceText:401c}
 \Bx =
 {\begin{bmatrix}
 x_{-N} &
@@ -98,6 +99,8 @@ x_0 &
 \cdots &
 x_{N}
 \end{bmatrix}}^\T,
+\end{equation}
+\begin{equation}\label{eqn:HarmonicBalanceText:401b}
 \BX =
 {\begin{bmatrix}
 X_{-N} &
@@ -105,8 +108,12 @@ X_{-N} &
 X_0 &
 \cdots &
 X_{N}
-\end{bmatrix}}^\T
-\),  \( W = e^{ 2 \pi j /(2 N + 1) } \), and \( \BF \) defined as
+\end{bmatrix}}^\T,
+\end{equation}
+\begin{equation}\label{eqn:HarmonicBalanceText:401a}
+W = e^{ 2 \pi j /(2 N + 1) },
+\end{equation}
+and \( \BF \) defined as
 \begin{equation}\label{eqn:ece1254projectReport:401}
 \small
 \begin{bmatrix}
@@ -896,8 +903,10 @@ As a test for the nonlinear voltage controlled \textbf{Elabel} elements, the cir
 \imageFigureHere{../figures/ece1254-multiphysics/report/PowerLawAmplifiersvoltageFig1.pdf}{Non-linear power-law amplifiers voltages.}{fig:PowerLawAmplifiersvoltageFig1}{3.0in}{proj:makefigures.m}
 
 Observe that the time domain output of the squaring-amplifier
-has the expected doubling of the fundamental frequency, and is shifted into the \( v > 0 \) region
-consistent with \( \cos^2(\omega_0 t) = \lr{\cos(2 \omega_0 t) + 1}/2 \).
+has the expected doubling of the fundamental frequency, and is shifted into the \( v > 0 \) region consistent with
+\begin{equation}\label{eqn:HarmonicBalanceText:17}
+\cos^2(\omega_0 t) = \lr{\cos(2 \omega_0 t) + 1}/2.
+\end{equation}
 \mysubsection{Stiff systems.}
 \index{stiff}
 For the low pass and rectifier circuits above, use of source stepping was sufficient (and required) to ensure convergence.
