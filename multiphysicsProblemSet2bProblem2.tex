@@ -445,14 +445,14 @@ Plots with \( V = 1, 10, 20, 100 \) are given in \cref{fig:ps2bP2PlotOfPsiV1Step
 %\imageFigure{../figures/ece1254-multiphysics/ps2bP2PlotOfPsiV100StepSize5NoDampingFig14}{CAPTION}{fig:ps2bP2PlotOfPsiV100StepSize5NoDamping:ps2bP2PlotOfPsiV100StepSize5NoDampingFig14}{0.3}
 %\imageFigure{../figures/ece1254-multiphysics/ps2bP2PlotOfPsiV100StepSize5WithDampingFig16}{CAPTION}{fig:ps2bP2PlotOfPsiV100StepSize5WithDamping:ps2bP2PlotOfPsiV100StepSize5WithDampingFig16}{0.3}
 %
-The number of iterations required are tabulated in \cref{tab:multiphysicsProblemSet2bProblem2:720}.  Introducing stepping on \( V \) slows convergence for small \( V \), but helps markedly for larger \( V \), more so than the damping algorithm.
+The number of iterations required are tabulated in \cref{tab:multiphysicsProblemSet2bProblem2:720} (first 3 columns damped).  Introducing stepping on \( V \) slows convergence for small \( V \), but helps markedly for larger \( V \), more so than the damping algorithm.
 %
 \captionedTable{Number of iterations to converge on solution.}{tab:multiphysicsProblemSet2bProblem2:720}{
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 %V & \multicolumn{2}{ |c| }{number of steps (No damping)} & \multicolumn{2}{ |c| }{number of steps (With damping)} \\
 %\hline
-V   & 0 steps, undamped & 5 steps, undamped  & 0 steps, damped & 5 steps, damped   \\ \hline
+V   & 0 steps& 5 steps& 0 steps& 5 steps(damped)   \\ \hline
 1   & 3  & 15 & 3  & 15  \\ \hline
 10  & 8  & 23 & 8  & 23  \\ \hline
 20  & 16 & 28 & 8  & 28  \\ \hline

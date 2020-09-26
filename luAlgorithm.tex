@@ -125,9 +125,10 @@ L_2^{-1} =
 The next stage of the \( U \) computation is
 %
 \begin{equation}\label{eqn:luAlgorithm:180}
+\begin{aligned}
 M
-\rightarrow L_2^{-1} L_1^{-1} M
-=
+&\rightarrow L_2^{-1} L_1^{-1} M \\
+&=
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 \\
@@ -139,14 +140,15 @@ M
 0 & 0 & 1 & 1 \\
 0 & 0 & 2 & 1 \\
 1 & 1 & 1 & 1 \\
-\end{bmatrix}
-=
+\end{bmatrix} \\
+&=
 \begin{bmatrix}
 2 & 0 & 2 & 0 \\
 0 & 0 & 1 & 1 \\
 0 & 0 & 2 & 1 \\
 0 & 1 & 0 & 1 \\
 \end{bmatrix}.
+\end{aligned}
 \end{equation}
 %
 Again, this is not an operation that should be done as a matrix operation.  Instead act directly on the rows in question with \cref{eqn:luAlgorithm:140}.

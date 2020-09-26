@@ -226,7 +226,7 @@ With all the sums involving only resistors (positive) and squares of real number
 Code for the netlist generation, the nodal equation generation were implemented respectively in
 %
 \begin{itemize}
-\item \nbcite{ps2a:generateResistorGridNetlist.m}{ps2a/generateResistorGridNetlist.m}
+\item \nbcite{ps2a:genResistorGridNl.m}{ps2a/genResistorGridNl.m}
 \item \nbcite{ps2a:NodalAnalysis.m}{ps2a/NodalAnalysis.m}
 \end{itemize}
 %
@@ -276,23 +276,23 @@ A test of this transformation can be found in \nbcite{ps2a:compareBD.m}{ps2a/com
 %
 \makeSubAnswer{}{multiphysics:problemSet2a:1e}
 %
-The time required to generate the nodal equations on my machine was reasonable for \( N \le 196 \).  For \( N = 256 \) Matlab ran out of memory generating the nodal equations.  With \nbcite{ps2a:generateNodalEquationsPartEH.m}{ps2a/generateNodalEquationsPartEH.m}
+The time required to generate the nodal equations on my machine was reasonable for \( N \le 196 \).  For \( N = 256 \) Matlab ran out of memory generating the nodal equations.  With \nbcite{ps2a:nodalEquationsPartEH.m}{ps2a/nodalEquationsPartEH.m}
 the nodal equation variables \( G, b \) for \( N \in \{ 8, 16, 32, 64, 128, 196 \} \), were \matlabFunc{save()}d to .mat files for subsequent use using a call to
-\matlabFuncPath{generateNodalEquationsPartEH(1)}{ps2a:generateNodalEquationsPartEH.m}
+\matlabFuncPath{nodalEquationsPartEH(1)}{ps2a:nodalEquationsPartEH.m}
 .  Timing data was collected and plotted in
-\nbcite{ps2a:partEcollectTimings.m}{ps2a/partEcollectTimings.m}.
+\nbcite{ps2a:partEtimings.m}{ps2a/partEtimings.m}.
 %
 LU timing data was collected for only \( N \le 32 \), and is plotted in \cref{fig:luTimings:luTimingsFig1}.
 %
-\mathImageFigure{../figures/ece1254-multiphysics/luTimingsFig1.pdf}{LU solution times.}{fig:luTimings:luTimingsFig1}{0.3}{ps2a:partEcollectTimings.m}
+\mathImageFigure{../figures/ece1254-multiphysics/luTimingsFig1.pdf}{LU solution times.}{fig:luTimings:luTimingsFig1}{0.3}{ps2a:partEtimings.m}
 %
 While I was able to generate the nodal equations for \( N = 196 \), attempting to solve that set of nodal equations with the methods specified made my system unresponsive (with Matlab eventually using 9Gb of memory before I killed it).  Timing data was collected for \( N \le 128 \), and is plotted with and without tridiagonal preconditioning in \cref{fig:timingsCG:timingsCGFig2}.
 %
-\mathImageFigure{../figures/ece1254-multiphysics/timingsCGFig2.pdf}{CG solution times.}{fig:timingsCG:timingsCGFig2}{0.3}{ps2a:partEcollectTimings.m}
+\mathImageFigure{../figures/ece1254-multiphysics/timingsCGFig2.pdf}{CG solution times.}{fig:timingsCG:timingsCGFig2}{0.3}{ps2a:partEtimings.m}
 %
 The iteration counts with and without tridiagonal preconditioning are plotted in \cref{fig:iterationsCG:iterationsCGFig3}.
 %
-\mathImageFigure{../figures/ece1254-multiphysics/iterationsCGFig3.pdf}{CG iteration counts for convergence.}{fig:iterationsCG:iterationsCGFig3}{0.3}{ps2a:partEcollectTimings.m}
+\mathImageFigure{../figures/ece1254-multiphysics/iterationsCGFig3.pdf}{CG iteration counts for convergence.}{fig:iterationsCG:iterationsCGFig3}{0.3}{ps2a:partEtimings.m}
 %
 \makeSubAnswer{}{multiphysics:problemSet2a:1f}
 %
@@ -302,7 +302,7 @@ Preconditioning is seen to reduce the number of iterations required to meet the 
 %
 Preconditioning is seen to have a runtime cost.  Without it there are also additional optimization available, as detailed above under ``CG without preconditioning''.  The runtime benefits of those optimizations turn out to be fairly small (at least compared to the additional preconditioning cost) and are plotted in \cref{fig:timingsCGwithOpt:timingsCGwithOptFig4}.
 %
-\mathImageFigure{../figures/ece1254-multiphysics/timingsCGwithOptFig4.pdf}{Benefits of CG optimized for no preconditioning.}{fig:timingsCGwithOpt:timingsCGwithOptFig4}{0.3}{ps2a:partEcollectTimings.m}
+\mathImageFigure{../figures/ece1254-multiphysics/timingsCGwithOptFig4.pdf}{Benefits of CG optimized for no preconditioning.}{fig:timingsCGwithOpt:timingsCGwithOptFig4}{0.3}{ps2a:partEtimings.m}
 %
 As implemented, all the repeated calculations are already avoided, with temporarily used to hold any results used multiple times.  The only clear opportunity for gain is by precalculating LU factors for the preconditioning matrix instead of using \matlabText{G \(\backslash\) r} in each iteration.
 %
@@ -310,11 +310,11 @@ Using \matlabFunc{[ L, U, P ] = lu(A)} command, we can replace \matlabText{A \(\
 %
 With this optimization the time required for CG with the preconditioner application begins to look closer to linear, but this optimization is not enough to drop the time required down to that of CG without the preconditioner.  This is plotted in \cref{fig:timingsCGwithOptLU:timingsCGwithOptLUFig5}.
 %
-\mathImageFigure{../figures/ece1254-multiphysics/timingsCGwithOptLUFig5.pdf}{LU optimization for the CG preconditioner.}{fig:timingsCGwithOptLU:timingsCGwithOptLUFig5}{0.3}{ps2a:partEcollectTimings.m}
+\mathImageFigure{../figures/ece1254-multiphysics/timingsCGwithOptLUFig5.pdf}{LU optimization for the CG preconditioner.}{fig:timingsCGwithOptLU:timingsCGwithOptLUFig5}{0.3}{ps2a:partEtimings.m}
 %
 \makeSubAnswer{}{multiphysics:problemSet2a:1h}
 %
-Nodal equations were generated with \matlabFuncPath{generateNodalEquationsPartEH(0)}{ps2a:generateNodalEquationsPartEH.m}.
+Nodal equations were generated with \matlabFuncPath{nodalEquationsPartEH(0)}{ps2a:nodalEquationsPartEH.m}.
 The Gershgorin circles and eigenvalues were plotted with \matlabFuncPath{partH(1, 0)}{ps2a:partH.m}.
 Plots for \( R = 0.1, 1, 10 \) can be found respectively in \cref{fig:gershgorinPlotR0_1:gershgorinPlotR0_1Fig6}, \cref{fig:gershgorinPlotR1:gershgorinPlotR1Fig7}, and \cref{fig:gershgorinPlotR10:gershgorinPlotR10Fig8}.
 %

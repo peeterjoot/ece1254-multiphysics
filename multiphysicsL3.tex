@@ -220,6 +220,8 @@ Compared to standard nodal analysis, two less unknowns for this system are requi
 Put into giant matrix form, this is
 %
 \begin{equation}\label{eqn:multiphysicsL3:120}
+\begin{aligned}
+&
    \kbordermatrix{
       & G         &           &        &           &              &        & A_{\textrm{V}}      &    \\
       & Z_{\textrm{A}} + Z_{\textrm{B}} & -Z_{\textrm{B}}      & .      & .         & -Z_{\textrm{A}}         & \vrule &          &    \\
@@ -240,8 +242,8 @@ Put into giant matrix form, this is
 %   \cline{1} \\
    i_{\textrm{S},\textrm{C}} \\
    i_{\textrm{S},\textrm{D}}
-\end{bmatrix}
-=
+\end{bmatrix} \\
+&\quad =
 \begin{bmatrix}
    -i_{\textrm{S},\textrm{A}} \\
    -i_{\textrm{S},\textrm{B}} \\
@@ -252,6 +254,7 @@ Put into giant matrix form, this is
    V_{\textrm{S},\textrm{C}} \\
    V_{\textrm{S},\textrm{D}}
 \end{bmatrix}
+\end{aligned}
 \end{equation}
 %
 %\cref{fig:lecture3:lecture3Fig5}
