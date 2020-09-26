@@ -225,7 +225,7 @@ With \( W = e^{ 2 \pi j /(2 N + 1) } \), and \( \BF \) equals
 %
 \begin{equation}\label{eqn:diodeRLCSample:140}
 %\BF =
-\begin{bmatrix}
+\begin{bsmallmatrix}
  W^{ N N } &  W^{ \lr{N-1} N }  & \Compactcdots & 1 & \Compactcdots &  W^{ -\lr{N-1} N }  &  W^{ -N N } \\
  W^{ N \lr{N-1} } &  W^{ \lr{N-1} \lr{N-1} }  & \Compactcdots & 1 & \Compactcdots &  W^{ -\lr{N-1} \lr{N-1} }  &  W^{ -N \lr{N-1} } \\
  \vdots              &  \vdots                      & \vdots      & \vdots & \vdots      &  \vdots                    &  \vdots               \\
@@ -233,7 +233,7 @@ With \( W = e^{ 2 \pi j /(2 N + 1) } \), and \( \BF \) equals
  \vdots              &  \vdots                      & \vdots      & \vdots & \vdots      &  \vdots                    &  \vdots               \\
  W^{ -N \lr{N-1} } &  W^{ -\lr{N-1} \lr{N-1} }  & \Compactcdots & 1 & \Compactcdots &  W^{ {N-1} \lr{N-1} }  &  W^{ N \lr{N-1} } \\
  W^{ -N N } &  W^{ -N N }  & \Compactcdots & 1 & \Compactcdots &  W^{ \lr{N-1} N }  &  W^{ N N }
-\end{bmatrix}.
+\end{bsmallmatrix}.
 \end{equation}
 %
 In each case the time domain sampling vectors are related to the Fourier components by relations of the form
@@ -1259,12 +1259,13 @@ With all the time dependence locked into the exponentials, the derivatives are r
 Inserting all of these into \cref{eqn:diodeRLCSample:1220} gives
 %
 \begin{equation}\label{eqn:diodeRLCSample:1320}
-\sum_{n=-N}^N e^{ j \omega_0 n t} \lr{ \BG + j \omega_0 n \BC }
+\begin{aligned}
+\sum_{n=-N}^N &e^{ j \omega_0 n t} \lr{ \BG + j \omega_0 n \BC }
 \begin{bmatrix}
 V^{(1)}_n \\
 V^{(2)}_n \\
-\end{bmatrix}
-=
+\end{bmatrix} \\
+&=
 \sum_{n=-N}^N e^{ j \omega_0 n t}
 \lr{
 -I_0 \Bd \delta_{n 0}
@@ -1272,6 +1273,7 @@ V^{(2)}_n \\
 \Bb I^{(s)}_n
 + I_0 \Bd E_n
 }.
+\end{aligned}
 \end{equation}
 %
 The periodic assumption requires equality for each \( e^{j \omega_0 n t} \), or

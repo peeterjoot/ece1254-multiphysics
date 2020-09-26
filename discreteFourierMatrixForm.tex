@@ -152,7 +152,7 @@ Following the FFT discussion in \citep{press1996numerical}, let
 \end{equation}
 where \( \Bw \) is
 \begin{equation}\label{eqn:discreteFourierMatrixForm:300b}
-\begin{bmatrix}
+\begin{bsmallmatrix}
  W^{N N } &  W^{\lr{N-1} N }  & \Compactcdots & 1 & \Compactcdots &  W^{- \lr{N-1} N }  &  W^{- N N } \\
  W^{N \lr{N-1} } &  W^{\lr{N-1} \lr{N-1} }  & \Compactcdots & 1 & \Compactcdots &  W^{- \lr{N-1} \lr{N-1} }  &  W^{- N \lr{N-1} } \\
  \vdots              &  \vdots                      & \vdots      & \vdots & \vdots      &  \vdots                    &  \vdots               \\
@@ -160,7 +160,7 @@ where \( \Bw \) is
  \vdots              &  \vdots                      & \vdots      & \vdots & \vdots      &  \vdots                    &  \vdots               \\
  W^{- N \lr{N-1} } &  W^{- \lr{N-1} \lr{N-1} }  & \Compactcdots & 1 & \Compactcdots &  W^{{N-1} \lr{N-1} }  &  W^{N \lr{N-1} } \\
  W^{- N N } &  W^{\lr{1 - N} N }  & \Compactcdots & 1 & \Compactcdots &  W^{\lr{N-1} N }  &  W^{N N } \\
-\end{bmatrix}
+\end{bsmallmatrix}
 \end{equation}
 %
 Similarly, from \cref{eqn:discreteFourierMatrixForm:220}, the inverse relation expands out to
@@ -185,7 +185,7 @@ with a matrix form of
 \end{equation}
 where \( \BY \) is
 \begin{equation}\label{eqn:discreteFourierMatrixForm:340b}
-\begin{bmatrix}
+\begin{bsmallmatrix}
 W^{- N N } & W^{- N \lr{N-1}} &\Compactcdots & 1 &\Compactcdots & W^{N \lr{ N-1 }} & W^{N N} \\
 W^{- \lr{N-1} N } & W^{- \lr{N-1} \lr{N-1}} &\Compactcdots & 1 &\Compactcdots & W^{\lr{N-1} \lr{ N-1 }} & W^{\lr{N-1} N} \\
 \vdots               & \vdots                     &  \vdots    & \vdots & \vdots     & \vdots                      &  \vdots            \\
@@ -193,14 +193,14 @@ W^{- \lr{N-1} N } & W^{- \lr{N-1} \lr{N-1}} &\Compactcdots & 1 &\Compactcdots & 
 \vdots               & \vdots                     &  \vdots    & \vdots & \vdots     & \vdots                      &  \vdots            \\
 W^{\lr{N-1} N } & W^{\lr{N-1} \lr{N-1}} &\Compactcdots & 1 &\Compactcdots & W^{- \lr{N-1} \lr{ N-1 }} & W^{- \lr{N-1} N} \\
 W^{N N } & W^{N \lr{N-1}} &\Compactcdots & 1 &\Compactcdots & W^{- N \lr{ N-1 }} & W^{- N N} \\
-\end{bmatrix}.
+\end{bsmallmatrix}.
 \end{equation}
 %
 Let \( \BF \) equal
 %
 \begin{equation}\label{eqn:discreteFourierMatrixForm:360}
 %\BF =
-\begin{bmatrix}
+\begin{bsmallmatrix}
  W^{N N } &  W^{\lr{N-1} N }  & \Compactcdots & 1 & \Compactcdots &  W^{- \lr{N-1} N }  &  W^{- N N } \\
  W^{N \lr{N-1} } &  W^{\lr{N-1} \lr{N-1} }  & \Compactcdots & 1 & \Compactcdots &  W^{- \lr{N-1} \lr{N-1} }  &  W^{- N \lr{N-1} } \\
  \vdots              &  \vdots                      & \vdots      & \vdots & \vdots      &  \vdots                    &  \vdots               \\
@@ -208,7 +208,7 @@ Let \( \BF \) equal
  \vdots              &  \vdots                      & \vdots      & \vdots & \vdots      &  \vdots                    &  \vdots               \\
  W^{- N \lr{N-1} } &  W^{- \lr{N-1} \lr{N-1} }  & \Compactcdots & 1 & \Compactcdots &  W^{{N-1} \lr{N-1} }  &  W^{N \lr{N-1} } \\
  W^{- N N } &  W^{\lr{1 - N} N }  & \Compactcdots & 1 & \Compactcdots &  W^{\lr{N-1} N }  &  W^{N N } \\
-\end{bmatrix},
+\end{bsmallmatrix},
 \end{equation}
 %
 the discrete transform pair has the following compactly matrix representation
