@@ -160,12 +160,12 @@ Similarly, the terminal node boundary value constraint \( i^{N+1} = 0 \), or \( 
 %
 \imageFigure{../figures/ece1254-multiphysics/ps3bTerminalNodeFig3}{Terminal node.}{fig:ps3bTerminalNode:ps3bTerminalNodeFig3}{0.3}
 %
-The pattern of \( \BG \) is illustrated well by the \( N = 6 \) case
+The pattern of \( \BG \) is illustrated well by the \( N = 6 \) case, where \( \BG \) equals
 %
 \begin{subequations}
 \begin{equation}\label{eqn:multiphysicsProblemSet3b:660}
-\BG =
-\begin{bmatrix}
+%\BG =
+\begin{bsmallmatrix}
     \alpha \lr{ \Delta x}^2 &       0 &       0 &       0 &       0 &       0 &       0 & -1 &       0 \\
          0 &  N + \alpha \lr{ \Delta x}^2 & -N &       0 &       0 &       0 &       0 &  1 &       0 \\
          0 & -N & 2 N + \alpha \lr{ \Delta x}^2 & -N &       0 &       0 &       0 &       0 &       0 \\
@@ -175,16 +175,16 @@ The pattern of \( \BG \) is illustrated well by the \( N = 6 \) case
          0 &       0 &       0 &       0 &       0 &       0 &  \alpha \lr{ \Delta x}^2 &       0 &  1 \\
     1 & -1 &       0 &       0 &       0 &       0 &       0 &       0 &       0 \\
          0 &       0 &       0 &       0 &       0 &  1 & -1 &       0 &       0 \\
-\end{bmatrix}
+\end{bsmallmatrix}
 \end{equation}
 \begin{equation}\label{eqn:multiphysicsProblemSet3b:680}
-\Bx =
+\Bx^\T =
 \begin{bmatrix}
-\tau^1 \\
-\tau^2 \\
-\vdots \\
-\tau^{N+1} \\
-i^1 \\
+\tau^1 &
+\tau^2 &
+\vdots &
+\tau^{N+1} &
+i^1 &
 i^N
 \end{bmatrix}
 \end{equation}
