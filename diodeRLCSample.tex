@@ -242,7 +242,7 @@ In each case the time domain sampling vectors are related to the Fourier compone
 \Bx = \BF \BX.
 \end{equation}
 %
-\section{Block matrix form, with physical parameter ordering.}
+\section{Block matrix form, physical parameter ordering.}
 %
 To understand how to put \cref{eqn:diodeRLCSample:240} in block matrix form, it is helpful to consider a specific example.  Consider again the specific example of the RLC circuit above, which has the form
 %
@@ -293,111 +293,147 @@ I_0^{(4)} &
 I_{1}^{(4)}
 \end{bmatrix}}^\T,
 \end{equation}
-where \( \BV^\T \) equals
+%where
+%\( \BV^\T \) equals
 \begin{equation}\label{eqn:diodeRLCSample:320c}
+\BV^\T =
 \begin{bmatrix}
 V_{-1}^{(1)} &
 V_{0}^{(1)} &
 V_{1}^{(1)} &
 V_{-1}^{(2)} &
-V_{0}^{(2)} &
-V_{1}^{(2)} &
-V_{-1}^{(3)} &
-V_{0}^{(3)} &
+%V_{0}^{(2)} &
+\cdots &
+%V_{1}^{(2)} &
+%V_{-1}^{(3)} &
+%V_{0}^{(3)} &
 V_{1}^{(3)} &
 I_{-1}^{(L)} &
 I_{0}^{(L)} &
 I_{1}^{(L)}
 \end{bmatrix},
 \end{equation}
-and \( \BG \) equals
+%and
+%\( \BG \) equals
 \begin{equation}\label{eqn:diodeRLCSample:320d}
+\BG =
 \left[
 \begin{array}{c|c|c|c}
 % row 1:
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} &
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} &
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} &
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} \\ \hline
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+\Bzero
+&
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+&
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+&
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+\\ \hline
 % row 2:
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} &
-\begin{matrix}
-Z & 0 & 0 \\
-0 & Z & 0 \\
-0 & 0 & Z \\
-\end{matrix} &
-\begin{matrix}
--Z & 0 & 0 \\
-0 & -Z & 0 \\
-0 & 0 & -Z \\
-\end{matrix} &
-\begin{matrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1 \\
-\end{matrix} \\ \hline
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+&
+Z \BOne
+%\begin{matrix}
+%Z & 0 & 0 \\
+%0 & Z & 0 \\
+%0 & 0 & Z \\
+%\end{matrix}
+&
+-Z \BOne
+%\begin{matrix}
+%-Z & 0 & 0 \\
+%0 & -Z & 0 \\
+%0 & 0 & -Z \\
+%\end{matrix}
+&
+\BOne
+%\begin{matrix}
+%1 & 0 & 0 \\
+%0 & 1 & 0 \\
+%0 & 0 & 1 \\
+%\end{matrix}
+\\ \hline
 % row 3:
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} &
-\begin{matrix}
--Z & 0 & 0 \\
-0 & -Z & 0 \\
-0 & 0 & -Z \\
-\end{matrix} &
-\begin{matrix}
-Z & 0 & 0 \\
-0 & Z & 0 \\
-0 & 0 & Z \\
-\end{matrix} &
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} \\ \hline
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+&
+-Z \BOne
+%\begin{matrix}
+%-Z & 0 & 0 \\
+%0 & -Z & 0 \\
+%0 & 0 & -Z \\
+%\end{matrix}
+&
+Z \BOne
+%\begin{matrix}
+%Z & 0 & 0 \\
+%0 & Z & 0 \\
+%0 & 0 & Z \\
+%\end{matrix}
+&
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+\\ \hline
 % row 4:
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} &
-\begin{matrix}
--1 & 0 & 0 \\
-0 & -1 & 0 \\
-0 & 0 & -1 \\
-\end{matrix} &
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix} &
-\begin{matrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{matrix}
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+&
+-\BOne
+%\begin{matrix}
+%-1 & 0 & 0 \\
+%0 & -1 & 0 \\
+%0 & 0 & -1 \\
+%\end{matrix}
+&
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
+&
+\Bzero
+%\begin{matrix}
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%0 & 0 & 0 \\
+%\end{matrix}
 \end{array}
 \right],
 \end{equation}
@@ -413,28 +449,28 @@ j \omega_0
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 \\ \hline
 % row 2:
 \Bzero
@@ -442,28 +478,28 @@ j \omega_0
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 \\ \hline
 % row 3:
 \Bzero
@@ -471,14 +507,14 @@ j \omega_0
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \begin{matrix}
  (-1) C & 0 & 0 \\
@@ -490,7 +526,7 @@ j \omega_0
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 \\ \hline
 % row 4:
 \Bzero
@@ -498,21 +534,21 @@ j \omega_0
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \Bzero
 %\begin{matrix}
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
 %0 & 0 & 0 \\
-%\end{matrix} 
+%\end{matrix}
 &
 \begin{matrix}
  (-1) L & 0 & 0 \\
@@ -574,24 +610,44 @@ j \omega_0 c_{rs} \BN
 %
 It turns out that a better way of ordering the vector of Fourier components is using a frequency ordering that interleaves the physical parameters.  With such an ordering the DFT MNA equations are
 %
+\begin{equation}\label{eqn:diodeRLCSample:11}
+\BI
+=
+\begin{bmatrix}
+I_{-1}^{(1)}  \\
+I_{-1}^{(2)}  \\
+I_{-1}^{(3)}  \\
+I_{-1}^{(4)}  \\
+I_0^{(1)}  \\
+I_0^{(2)}  \\
+I_0^{(3)}  \\
+I_0^{(4)}  \\
+I_{1}^{(1)}  \\
+I_{1}^{(2)}  \\
+I_{1}^{(3)}  \\
+I_{1}^{(4)}  \\
+\end{bmatrix}, \qquad
+\BV
+=
+\begin{bmatrix}
+V_{-1}^{(1)}  \\
+V_{-1}^{(2)}  \\
+V_{-1}^{(3)}  \\
+I_{-1}^{(L)}  \\
+V_{0}^{(1)}  \\
+V_{0}^{(2)}  \\
+V_{0}^{(3)}  \\
+I_{0}^{(L)}  \\
+V_{1}^{(1)}  \\
+V_{1}^{(2)}  \\
+V_{1}^{(3)}  \\
+I_{1}^{(L)}  \\
+\end{bmatrix},
+\end{equation}
 \begin{equation}\label{eqn:diodeRLCSample:340}
 \begin{aligned}
-\BI =
-&\begin{bmatrix}
-I_{-1}^{(1)} \\
-I_{-1}^{(2)} \\
-I_{-1}^{(3)} \\
-I_{-1}^{(4)} \\
-I_0^{(1)} \\
-I_0^{(2)} \\
-I_0^{(3)} \\
-I_0^{(4)} \\
-I_{1}^{(1)} \\
-I_{1}^{(2)} \\
-I_{1}^{(3)} \\
-I_{1}^{(4)} \\
-\end{bmatrix}
-+
+&\BI
+=
 \left[
 \begin{array}{c|c|c}
 \begin{matrix}
@@ -599,15 +655,16 @@ I_{1}^{(4)} \\
 0 & Z  & -Z & 1 \\
 0 & -Z & Z & 0 \\
 0 & -1 & 0 & 0 \\
-\end{matrix} & 0 & 0 \\ \hline
-0 &
+\end{matrix}
+& \Bzero & \Bzero \\ \hline
+\Bzero &
 \begin{matrix}
 0 & 0  & 0  & 0 \\
 0 & Z  & -Z & 1 \\
 0 & -Z & Z & 0 \\
 0 & -1 & 0 & 0 \\
-\end{matrix} & 0 \\ \hline
-0 & 0 &
+\end{matrix} & \Bzero \\ \hline
+\Bzero & \Bzero &
 \begin{matrix}
 0 & 0  & 0  & 0 \\
 0 & Z  & -Z & 1 \\
@@ -616,20 +673,8 @@ I_{1}^{(4)} \\
 \end{matrix} \\
 \end{array}
 \right]
-\begin{bmatrix}
-V_{-1}^{(1)} \\
-V_{-1}^{(2)} \\
-V_{-1}^{(3)} \\
-I_{-1}^{(L)} \\
-V_{0}^{(1)} \\
-V_{0}^{(2)} \\
-V_{0}^{(3)} \\
-I_{0}^{(L)} \\
-V_{1}^{(1)} \\
-V_{1}^{(2)} \\
-V_{1}^{(3)} \\
-I_{1}^{(L)} \\
-\end{bmatrix} \\
+\BV
+\\
 &+
 j \omega_0
 \left[
@@ -659,20 +704,7 @@ j \omega_0
 \end{bmatrix} \\
 \end{array}
 \right]
-\begin{bmatrix}
-V_{-1}^{(1)} \\
-V_{-1}^{(2)} \\
-V_{-1}^{(3)} \\
-I_{-1}^{(L)} \\
-V_{0}^{(1)} \\
-V_{0}^{(2)} \\
-V_{0}^{(3)} \\
-I_{0}^{(L)} \\
-V_{1}^{(1)} \\
-V_{1}^{(2)} \\
-V_{1}^{(3)} \\
-I_{1}^{(L)} \\
-\end{bmatrix} \\
+\BV
 \end{aligned}
 \end{equation}
 %
@@ -975,17 +1007,22 @@ V_{2 + (b-1) R}
 The partials now follow immediately
 %
 \begin{equation}\label{eqn:diodeRLCSample:920}
-\PD{V_s}{E_r} =
+\begin{aligned}
+\PD{V_s}{E_r}
+&=
 \inv{2 N + 1} \inv{V_{\textrm{T}}} \overbar{F}_{r a} F_{ab}
 \exp\lr{ F_{ab}
 (
 V_{1 + (b-1) R} -
 V_{2 + (b-1) R}
 )/V_{\textrm{T}} }
+\times \\
+&\qquad
 \lr{
 \delta_{s,1 + (b-1) R} -
 \delta_{s,2 + (b-1) R}
 }.
+\end{aligned}
 \end{equation}
 %
 \paragraph{Generalization}
@@ -1022,17 +1059,21 @@ V_{n + (b-1) R}
 The Jacobian partials are
 %
 \begin{equation}\label{eqn:diodeRLCSample:1060}
-\PD{V_s}{E_r} =
+\begin{aligned}
+\PD{V_s}{E_r} &=
 \inv{2 N + 1} \inv{V_{\textrm{T}}} \overbar{F}_{r a} F_{ab}
 \exp\lr{ F_{ab}
 (
 V_{m + (b-1) R} -
 V_{n + (b-1) R}
 )/V_{\textrm{T}} }
+\times \\
+&\qquad
 \lr{
 \delta_{s,m + (b-1) R} -
 \delta_{s,n + (b-1) R}
 }.
+\end{aligned}
 \end{equation}
 %
 Note that this Jacobian
@@ -1251,7 +1292,8 @@ V^{(2)}_n \\
 For illustration, consider the \( N = 1 \) case, where the block matrix form is
 %
 \begin{equation}\label{eqn:diodeRLCSample:1360}
-\begin{bmatrix}
+\begin{aligned}
+&\begin{bmatrix}
 \BG + j \omega_0 (-1) \BC & 0 & 0 \\
 0 & \BG + j \omega_0 (0) \BC & 0 \\
 0 & 0 & \BG + j \omega_0 (1) \BC
@@ -1269,8 +1311,8 @@ V^{(2)}_{0} \\
 V^{(1)}_{1} \\
 V^{(2)}_{1} \\
 \end{bmatrix}
-\end{matrix}
-=
+\end{matrix} \\
+&\qquad =
 \begin{bmatrix}
 \Bb I^{(s)}_{-1} \\
 \Bb I^{(s)}_{0} - I_0 \Bd \\
@@ -1283,6 +1325,7 @@ I_0
 \Bd E_{0} \\
 \Bd E_{1} \\
 \end{bmatrix}.
+\end{aligned}
 \end{equation}
 %
 The structure of this equation is
