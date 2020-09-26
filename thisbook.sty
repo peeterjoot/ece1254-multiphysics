@@ -1,6 +1,13 @@
 %-----------------------------------------
 \usepackage{macros_cal}
 
+%-----------------------------------------
+
+% https://tex.stackexchange.com/questions/455279/is-there-something-like-cdots-that-uses-less-space
+
+\DeclareRobustCommand
+  \Compactcdots{\mathinner{\cdotp\mkern-2mu\cdotp\mkern-2mu\cdotp}}
+
 %----------------------------------------
 \newcommand{\mychapter}[1]{%
 \chapter{#1}%
