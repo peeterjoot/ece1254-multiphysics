@@ -4,7 +4,7 @@ ece1254.V0.1.10.pdf
 
 ece1254.V0.1.9-11.pdf, Sep 26, 2020 (commit fbcf82c816dff87c48a8a76e69f8189e5328d9ee)
 
-[ This is the version that I have a kdp printout of.]
+[ This is the version that I have a kdp printout of.]  Seems to have been posted to the blog as V0.1.10-redacted
 
 - Update email address
 - Spell check rules and spellcheck pass.
