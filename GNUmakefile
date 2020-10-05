@@ -42,6 +42,11 @@ THISBOOK_DEPS += kbordermatrix.sty
 
 DO_SPELL_CHECK := $(shell cat spellcheckem.txt)
 
+DOTS := $(wildcard *.dot)
+PDFS_FROM_DOTS := $(patsubst %.dot,%.pdf,$(DOTS))
+
+MAIN_TARGETS += $(PDFS_FROM_DOTS)
+
 include ../latex/make.rules
 
 .PHONY: spellcheck
@@ -105,3 +110,6 @@ clean ::
 backmatter.tex: ../latex/classicthesis_mine/backmatter2.tex
 	rm -f $@
 	ln -s ../latex/classicthesis_mine/backmatter2.tex backmatter.tex
+
+%.pdf : %.dot
+	neato -Tpdf $^ -o $@

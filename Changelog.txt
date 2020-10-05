@@ -1,11 +1,17 @@
-ece1254.V0.1.9-x.pdf
+ece1254.V0.1.10.pdf
 
-- update email address
-- spell check rules and spellcheck pass.
-- fix listing hyphenation
+- Replace hand drawn graphs with .dot files.
+
+ece1254.V0.1.9-11.pdf, Sep 26, 2020 (commit fbcf82c816dff87c48a8a76e69f8189e5328d9ee)
+
+[ This is the version that I have a kdp printout of.]
+
+- Update email address
+- Spell check rules and spellcheck pass.
+- Fix listing hyphenation
 - thethe.py review.
-- brute force pruing of blank lines.
-- convert to 6x9 format, and fix all the corresponding gutter issues.
+- Brute force pruing of blank lines.
+- Convert to 6x9 format, and fix all the corresponding gutter issues.
 - add: backcover.txt
 
 ===================================================================================

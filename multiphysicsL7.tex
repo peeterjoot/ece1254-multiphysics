@@ -256,7 +256,8 @@ M_{55} &= 4 \\
 \end{aligned}
 \end{equation}
 Compare these to the number of interconnections of the graph \cref{fig:lecture7:lecture7Fig3} of the nodes in this circuit.  These are the squares of the number of the node interconnects in each case.
-\imageFigure{../figures/ece1254-multiphysics/lecture7Fig3}{Graph representation.}{fig:lecture7:lecture7Fig3}{0.3}
+%\imageFigure{../figures/ece1254-multiphysics/lecture7Fig3}{Graph representation.}{fig:lecture7:lecture7Fig3}{0.3}
+\imageFigure{fivenodes}{Graph representation.}{fig:lecture7:lecture7Fig3}{0.3}
 Here a 5th node was introduced for the current \( i \) between nodes \( 4 \) and \( 1 \).
 Observe that the Markowitz product of this node was counted as the number of non-zero values excluding the \( 5,5 \) matrix position.
 However, that doesn't matter too much since a Markowitz swap of row/column 1 with row/column 5 would put a zero in the \( 1,1 \) position of the matrix, which is not desirable.
@@ -336,6 +337,7 @@ x &  0 & 0 & x & -1 \\
 \end{subequations}
 %
 The remaining \( 4 \times 4 \) submatrices have interconnect graphs sketched in \cref{fig:lecture7:lecture7Fig4}.
-\imageFigure{../figures/ece1254-multiphysics/lecture7Fig4}{Graphs after one round of Gaussian elimination.}{fig:lecture7:lecture7Fig4}{0.3}
+%\imageFigure{../figures/ece1254-multiphysics/lecture7Fig4}{Graphs after one round of Gaussian elimination.}{fig:lecture7:lecture7Fig4}{0.3}
+\imageTwoFigures{fournodes}{fournodesStep2}{Graphs after one round of Gaussian elimination.}{fig:lecture7:lecture7Fig4}{scale=0.5}
 From a graph point of view, the objective is to delete the most connected nodes.  This can be driven by the Markowitz products along the diagonal or directly with graph methods.
 %\section{Definitions and theorems}
