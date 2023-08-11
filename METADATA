@@ -7,7 +7,7 @@ my @ece1254 =
    TITLE => qq(Analogies to circuit systems),
    DATE => 'September 23, 2014',
    REF => 'multiphysicsL1',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL1.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL1.pdf',
    WHAT => qq()
 }
 ,{
@@ -15,7 +15,7 @@ my @ece1254 =
    TITLE => qq(Assembling system equations automatically),
    DATE => 'September 23, 2014',
    REF => 'multiphysicsL2',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL2.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL2.pdf',
    WHAT => qq()
 }
 ,{
@@ -23,7 +23,7 @@ my @ece1254 =
    TITLE => qq(Nodal Analysis),
    DATE => 'September 24, 2014',
    REF => 'multiphysicsL3',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL3.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL3.pdf',
    WHAT => qq()
 }
 ,{
@@ -31,7 +31,7 @@ my @ece1254 =
    TITLE => qq(Solving large systems),
    DATE => 'September 26, 2014',
    REF => 'multiphysicsL4',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL4.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL4.pdf',
    WHAT => qq()
 }
 ,{
@@ -39,7 +39,7 @@ my @ece1254 =
    TITLE => qq(Numerical error and conditioning.),
    DATE => 'September 30, 2014',
    REF => 'multiphysicsL5',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL5.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL5.pdf',
    WHAT => qq()
 }
 ,{
@@ -47,7 +47,7 @@ my @ece1254 =
    TITLE => qq(Matrix norm, singular decomposition, and conditioning number),
    DATE => 'October 01, 2014',
    REF => 'multiphysicsL6',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL6.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL6.pdf',
    WHAT => qq()
 }
 ,{
@@ -55,7 +55,7 @@ my @ece1254 =
    TITLE => qq(Singular Value Decomposition),
    DATE => 'October 02, 2014',
    REF => 'svdNotes',
-   URL => 'http://peeterjoot.com/archives/math2014/svdNotes.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/svdNotes.pdf',
    WHAT => qq()
 }
 ,{
@@ -63,7 +63,7 @@ my @ece1254 =
    TITLE => qq(Numeric LU factorization example),
    DATE => 'October 09, 2014',
    REF => 'luExample',
-   URL => 'http://peeterjoot.com/archives/math2014/luExample.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/luExample.pdf',
    WHAT => qq()
 }
 ,{
@@ -71,7 +71,7 @@ my @ece1254 =
    TITLE => qq(Numerical LU example where pivoting is required),
    DATE => 'October 09, 2014',
    REF => 'luExample2',
-   URL => 'http://peeterjoot.com/archives/math2014/luExample2.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/luExample2.pdf',
    WHAT => qq()
 }
 ,{
@@ -79,7 +79,7 @@ my @ece1254 =
    TITLE => qq(Modified Nodal Analysis),
    DATE => 'October 14, 2014',
    REF => 'multiphysicsProblemSet1',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsProblemSet1.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsProblemSet1.pdf',
    WHAT => qq()
 }
 ,{
@@ -87,7 +87,7 @@ my @ece1254 =
    TITLE => qq(Illustrating the LU algorthm with pivots by example),
    DATE => 'October 15, 2014',
    REF => 'luAlgorithm',
-   URL => 'http://peeterjoot.com/archives/math2014/luAlgorithm.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/luAlgorithm.pdf',
    WHAT => qq()
 }
 ,{
@@ -95,7 +95,7 @@ my @ece1254 =
    TITLE => qq(Sparse factorization and iterative methods),
    DATE => 'October 21, 2014',
    REF => 'multiphysicsL7',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL7.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL7.pdf',
    WHAT => qq()
 }
 ,{
@@ -103,7 +103,7 @@ my @ece1254 =
    TITLE => qq(Conjugate gradient method),
    DATE => 'October 24, 2014',
    REF => 'multiphysicsL8',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL8.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL8.pdf',
    WHAT => qq()
 }
 ,{
@@ -111,7 +111,7 @@ my @ece1254 =
    TITLE => qq(Conjugate gradient methods),
    DATE => 'October 22, 2014',
    REF => 'multiphysicsL9',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL9.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL9.pdf',
    WHAT => qq()
 }
 ,{
@@ -119,7 +119,7 @@ my @ece1254 =
    TITLE => qq(Nonlinear systems),
    DATE => 'October 21, 2014',
    REF => 'multiphysicsL10',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL10.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL10.pdf',
    WHAT => qq()
 }
 ,{
@@ -127,7 +127,7 @@ my @ece1254 =
    TITLE => qq(Nonlinear equations),
    DATE => 'October 22, 2014',
    REF => 'multiphysicsL11',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL11.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL11.pdf',
    WHAT => qq()
 }
 ,{
@@ -135,7 +135,7 @@ my @ece1254 =
    TITLE => qq(Struts and Joints, Node branch formulation),
    DATE => 'October 27, 2014',
    REF => 'multiphysicsL12',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL12.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL12.pdf',
    WHAT => qq()
 }
 ,{
@@ -144,7 +144,7 @@ my @ece1254 =
 %\chapter{Simulation of dynamical systems}),
    DATE => 'October 29, 2014',
    REF => 'multiphysicsL13',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL13.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL13.pdf',
    WHAT => qq()
 }
 ,{
@@ -152,7 +152,7 @@ my @ece1254 =
    TITLE => qq(Iterative methods),
    DATE => 'November 02, 2014',
    REF => 'multiphysicsProblemSet2a',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsProblemSet2a.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsProblemSet2a.pdf',
    WHAT => qq()
 }
 ,{
@@ -160,7 +160,7 @@ my @ece1254 =
    TITLE => qq(Newton's and finite element methods),
    DATE => 'November 09, 2014',
    REF => 'multiphysicsProblemSet2b',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsProblemSet2b.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsProblemSet2b.pdf',
    WHAT => qq()
 }
 ,{
@@ -168,7 +168,7 @@ my @ece1254 =
    TITLE => qq(Backward Euler method and trapazoidal methods),
    DATE => 'November 10, 2014',
    REF => 'multiphysicsL14',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL14.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL14.pdf',
    WHAT => qq()
 }
 ,{
@@ -176,7 +176,7 @@ my @ece1254 =
    TITLE => qq(Nonlinear differential equations),
    DATE => 'November 12, 2014',
    REF => 'multiphysicsL15',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL15.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL15.pdf',
    WHAT => qq()
 }
 ,{
@@ -184,7 +184,7 @@ my @ece1254 =
    TITLE => qq(LMS systems and stability),
    DATE => 'November 17, 2014',
    REF => 'multiphysicsL16',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL16.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL16.pdf',
    WHAT => qq()
 }
 ,{
@@ -192,7 +192,7 @@ my @ece1254 =
    TITLE => qq(Stability of discretized linear differential equations),
    DATE => 'November 17, 2014',
    REF => 'stabilityLDEandDiscreteTime',
-   URL => 'http://peeterjoot.com/archives/math2014/stabilityLDEandDiscreteTime.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/stabilityLDEandDiscreteTime.pdf',
    WHAT => qq()
 }
 ,{
@@ -200,7 +200,7 @@ my @ece1254 =
    TITLE => qq(Stability),
    DATE => 'November 19, 2014',
    REF => 'multiphysicsL17',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL17.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL17.pdf',
    WHAT => qq()
 }
 ,{
@@ -208,7 +208,7 @@ my @ece1254 =
    TITLE => qq(Model order reduction),
    DATE => 'November 24, 2014',
    REF => 'multiphysicsL18',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL18.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL18.pdf',
    WHAT => qq()
 }
 ,{
@@ -216,7 +216,7 @@ my @ece1254 =
    TITLE => qq(Time dependence),
    DATE => 'November 25, 2014',
    REF => 'multiphysicsProblemSet3a',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsProblemSet3a.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsProblemSet3a.pdf',
    WHAT => qq()
 }
 ,{
@@ -224,7 +224,7 @@ my @ece1254 =
    TITLE => qq(Model order reduction (cont).),
    DATE => 'November 26, 2014',
    REF => 'multiphysicsL19',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL19.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL19.pdf',
    WHAT => qq()
 }
 ,{
@@ -232,7 +232,7 @@ my @ece1254 =
    TITLE => qq(Laplace transform refresher),
    DATE => 'November 27, 2014',
    REF => 'laplaceTransformVec',
-   URL => 'http://peeterjoot.com/archives/math2014/laplaceTransformVec.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/laplaceTransformVec.pdf',
    WHAT => qq()
 }
 ,{
@@ -240,7 +240,7 @@ my @ece1254 =
    TITLE => qq(Observability and controllability),
    DATE => 'December 01, 2014',
    REF => 'multiphysicsL20',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsL20.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsL20.pdf',
    WHAT => qq()
 }
 ,{
@@ -248,7 +248,7 @@ my @ece1254 =
    TITLE => qq(Model order reduction),
    DATE => 'December 02, 2014',
    REF => 'multiphysicsProblemSet3b',
-   URL => 'http://peeterjoot.com/archives/math2014/multiphysicsProblemSet3b.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/multiphysicsProblemSet3b.pdf',
    WHAT => qq()
 }
 ,{
@@ -256,7 +256,7 @@ my @ece1254 =
    TITLE => qq(Discrete Fourier Transform),
    DATE => 'December 02, 2014',
    REF => 'discreteFourier',
-   URL => 'http://peeterjoot.com/archives/math2014/discreteFourier.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/discreteFourier.pdf',
    WHAT => qq()
 }
 ,{
@@ -264,7 +264,7 @@ my @ece1254 =
    TITLE => qq(Matrix form for discrete time Fourier transform),
    DATE => 'December 16, 2014',
    REF => 'discreteFourierMatrixForm',
-   URL => 'http://peeterjoot.com/archives/math2014/discreteFourierMatrixForm.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/discreteFourierMatrixForm.pdf',
    WHAT => qq()
 }
 ,{
@@ -272,7 +272,7 @@ my @ece1254 =
    TITLE => qq(A sample diode RLC circuit),
    DATE => 'December 16, 2014',
    REF => 'diodeRLCSample',
-   URL => 'http://peeterjoot.com/archives/math2014/diodeRLCSample.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/diodeRLCSample.pdf',
    WHAT => qq()
 }
 ,{
@@ -280,7 +280,7 @@ my @ece1254 =
    TITLE => qq(Harmonic Balance solutions to non-linear circuits),
    DATE => 'December 24, 2014',
    REF => 'HarmonicBalance',
-   URL => 'http://peeterjoot.com/archives/math2014/HarmonicBalance.pdf',
+   URL => 'https://peeterjoot.com/archives/math2014/HarmonicBalance.pdf',
    WHAT => qq()
 }
 ) ; # @ece1254
