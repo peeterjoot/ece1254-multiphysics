@@ -91,28 +91,32 @@ with
 \end{equation}
 %
 so that the residual is
-\begin{dmath}\label{eqn:multiphysicsL8:160}
+\begin{equation}\label{eqn:multiphysicsL8:160}
+\begin{aligned}
 \Br^{(1)}
-= \Bb - M \Bx^{(1)}
-= \Bb - M \Bx^{(0)} - \alpha_0 M \Br^{(0)}
-= \Bb - \alpha M \Br^{(0)}.
-\end{dmath}
+&= \Bb - M \Bx^{(1)}
+\\ &= \Bb - M \Bx^{(0)} - \alpha_0 M \Br^{(0)}
+\\ &= \Bb - \alpha M \Br^{(0)}.
+\end{aligned}
+\end{equation}
 %
 An orthogonality condition \( \Br^{(1)} \perp \Bd^{(0)} \) is desired.
 %
 \paragraph{Proof:}
 %
-\begin{dmath}\label{eqn:multiphysicsL8:180}
+\begin{equation}\label{eqn:multiphysicsL8:180}
+\begin{aligned}
 \innerprod{\Bd^{(0)}}{ \Br^{(1)}}
-=
+&=
 \innerprod{\Bd^{(0)}}{ \Br^{(0)}}
 -\alpha_0
 \innerprod{\Bd^{(0)}}{ M \Br^{(0)}}
-=
+\\ &=
 \innerprod{\Bd^{(0)}}{ \Br^{(0)}}
 -\alpha_0
 \innerprod{\Br^{(0)}}{ M \Br^{(0)}}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 \paragraph{Second iteration}
 %
@@ -132,13 +136,14 @@ The conditions to satisfy are
 %
 Observe that the orthogonality condition of \cref{eqn:multiphysicsL8:220} is satisfied
 %
-\begin{dmath}\label{eqn:multiphysicsL8:260}
+\begin{equation}\label{eqn:multiphysicsL8:260}
+\begin{aligned}
 \innerprod{\Bd^{(0)}}{ \Br^{(2)}}
-=
+&=
 \innerprod{\Bd^{(0)}}{ \Bb - M \Bx^{(2)}}
-=
+\\ &=
 \innerprod{\Bd^{(0)}}{ \Bb - M \Bx^{(1)} - \alpha_1 M \Bd^{(1)}}
-=
+\\ &=
 \mathLabelBox
 [
    labelstyle={xshift=2cm},
@@ -150,7 +155,8 @@ Observe that the orthogonality condition of \cref{eqn:multiphysicsL8:220} is sat
 {\(= 0\) because \( \Bd^{(0)} \perp \Br^{(1)}\) }
 -\alpha_1
 \innerprod{\Bd^{(0)}}{ \alpha_1 M \Bd^{(1)}}
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 This will be zero if an \( M \) orthogonality or conjugate zero condition can be imposed
 %

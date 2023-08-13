@@ -124,8 +124,9 @@ where \(\BI_{\textrm{B}}\) was the branch currents, \(A\) was the \textAndIndex{
 The \textAndIndex{stamp} can be observed in the multiplication of the contribution for a single resistor.  The incidence matrix has the form \( G = A \alpha A^\T \)
 %as illustrated in \cref{fig:lecture3:lecture3Fig3}.
 %\imageFigure{../figures/ece1254-multiphysics/lecture3Fig3}{Factoring of the stamp matrix.}{fig:lecture3:lecture3Fig3}{0.3}
-\begin{dmath}\label{eqn:multiphysicsL3:100}
-G =
+\begin{equation}\label{eqn:multiphysicsL3:100}
+\begin{aligned}
+G &=
 \kbordermatrix{
     & \downarrow   & \\
 n_1 & +1             & \\
@@ -141,28 +142,31 @@ n_2 & -1           & \\
    & +1  & -1 \\
    &     &
 }
-=
+\\ &=
 \kbordermatrix{
     & n_1      & n_2 \\
 n_1 & \inv{R}  & -\inv{R} \\
 n_2 & -\inv{R} & \inv{R}
 }
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 \paragraph{Theoretical facts}
 %
 Noting that \(\lr{ A B }^\T = B^\T A^\T \), it is clear that the nodal matrix \(G = A \alpha A^\T \) is symmetric \index{symmetric matrix}
 %
-\begin{dmath}\label{eqn:multiphysicsL3:80}
+\begin{equation}\label{eqn:multiphysicsL3:80}
+\begin{aligned}
 G^\T
-=
+&=
 \lr{ A \alpha A^\T }^\T
-=
+\\ &=
 \lr{ A^\T }^\T \alpha^\T A^\T
-=
+\\ &=
 A \alpha A^\T
-= G
-\end{dmath}
+\\ &= G
+\end{aligned}
+\end{equation}
 %
 \section{Modified nodal analysis (MNA).}
 \index{modified nodal analysis}

@@ -131,15 +131,17 @@ F(\Bx) = G \Bx + H(\Bx) - \Bb.
 %
 The zeros of \( F(\Bx) \) are sought.  Expansion of \( F(\Bx) \) in Taylor series produces the Jacobian term that is to be shown non-singular.  That Taylor expansion, around \( \Bx^0 \) is
 %
-\begin{dmath}\label{eqn:multiphysicsProblemSet2bProblem2:260}
+\begin{equation}\label{eqn:multiphysicsProblemSet2bProblem2:260}
+\begin{aligned}
 F(\Bx^1)
-= G \Bx^0 + H(\Bx^0) - \Bb +
+&= G \Bx^0 + H(\Bx^0) - \Bb +
 {\begin{bmatrix}
 \evalbar{\PD{\psi_j}{} \lr{G_{ik} \psi_k + H_i} }{\psi_j = \psi_j^0} \lr{ \psi_j^1 - \psi_j^0}
 \end{bmatrix}}_i
-= G \Bx^0 + H(\Bx^0) - \Bb +
+\\ &= G \Bx^0 + H(\Bx^0) - \Bb +
 J(\Bx^0) \lr{ \Bx^1 - \Bx^0 },
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 where the Jacobian evaluated at \( \Bx^0 \) is
 %
@@ -169,9 +171,9 @@ J(\Bx^0) = G + J_H(\Bx^0)
 %
 This Jacobian is symmetric, so the eigenvalues are real.  Gershgorin's theorem for the interior rows states that
 %
-\begin{dmath}\label{eqn:multiphysicsProblemSet2bProblem2:440}
+\begin{equation}\label{eqn:multiphysicsProblemSet2bProblem2:440}
 \Abs{\lambda_i - \lr{ 2 + 2 \lr{\Delta x}^2 \cosh(\psi_i) }} < 2,
-\end{dmath}
+\end{equation}
 %
 or
 %
@@ -182,9 +184,9 @@ or
 %
 For the first and last rows Gershgorin's theorem requires
 %
-\begin{dmath}\label{eqn:multiphysicsProblemSet2bProblem2:480}
+\begin{equation}\label{eqn:multiphysicsProblemSet2bProblem2:480}
 \Abs{\lambda_i - \lr{ 2 + 2 \lr{\Delta x}^2 \cosh(\psi_i) }} < 1,
-\end{dmath}
+\end{equation}
 %-\lambda_i + \lr{ 1 + 2 \lr{\Delta x}^2 \cosh(\psi_i) } < 0
 %
 or
@@ -279,15 +281,18 @@ The damping algorithm of the class slides was
 %%%
 %%% %%%The difference of exponentials can be expanded in Taylor series
 %%% %%%
-%%% %%%\begin{dmath}\label{eqn:multiphysicsProblemSet2bProblem2:120}
+%%% %%%\begin{equation}\label{eqn:multiphysicsProblemSet2bProblem2:120}
+%%%\begin{aligned}
 %%% %%%e^{\psi_i} - e^{-\psi_i}
-%%% %%%=
+%%% %%%&=
 %%% %%%\lr{ 1 + \psi_i + \psi_i^3/2 + \psi_i^3/6 + \cdots }
 %%% %%%-
 %%% %%%\lr{ 1 - \psi_i + \psi_i^3/2 - \psi_i^3/6 + \cdots }
-%%% %%%=
+%%% %%%\\ &=
 %%% %%%2 \psi_i + \inv{3} \psi_i^3 + \cdots,
-%%% %%%\end{dmath}
+%%% %%%
+%%%\end{aligned}
+%%%\end{equation}
 %%% %%%
 %%% %%%so the Jacobian is just \( 2 I \), which is never singular.  The linear approximation of the nodal equations is
 %%% %%%
@@ -320,23 +325,27 @@ The damping algorithm of the class slides was
 %%%
 %%% In order to apply damped Newton's method, we are looking to minimize \( \Norm{F \lr{ \Bx^0 + \alpha \Delta} }^2 \) with respect to \( \alpha \).  Here \( \Delta = -J^{-1} F \), the direction of the iteration adjustment.  That comes from solving
 %%%
-%%% \begin{dmath}\label{eqn:multiphysicsProblemSet2bProblem2:380}
+%%% \begin{equation}\label{eqn:multiphysicsProblemSet2bProblem2:380}
+%%%\begin{aligned}
 %%% 0
-%%% = \PD{\alpha}{} \Norm{ F( \Bx^0 + \alpha \Delta ) }^2
-%%% = 2 F \cdot \PD{ \alpha }{F}
-%%% = 2 \lr{ G \lr{ \Bx^0 + \alpha \Delta } - \Bb + H } \cdot \lr{
+%%% &= \PD{\alpha}{} \Norm{ F( \Bx^0 + \alpha \Delta ) }^2
+%%% \\ &= 2 F \cdot \PD{ \alpha }{F}
+%%% \\ &= 2 \lr{ G \lr{ \Bx^0 + \alpha \Delta } - \Bb + H } \cdot \lr{
 %%% G \Delta +
 %%% 2 \lr{ \Delta x }^2
 %%% {\begin{bmatrix}
 %%% \Delta_i \cosh\lr{ \psi_i + \alpha \Delta_i }
 %%% \end{bmatrix}}_i
 %%% }
-%%% \end{dmath}
+%%%
+%%%\end{aligned}
+%%%\end{equation}
 %%%
 %%% Writing
 %%%
-%%% \begin{dmath}\label{eqn:multiphysicsProblemSet2bProblem2:400}
-%%% H' =
+%%% \begin{equation}\label{eqn:multiphysicsProblemSet2bProblem2:400}
+%%%\begin{aligned}
+%%% H' &=
 %%% 2 \lr{ \Delta x }^2
 %%% {\begin{bmatrix}
 %%% \Delta_i \cosh\lr{ \psi_i + \alpha \Delta_i }
@@ -346,21 +355,26 @@ The damping algorithm of the class slides was
 %%% {\begin{bmatrix}
 %%% \Delta_i \cosh \psi_i
 %%% \end{bmatrix}}_i
-%%% = J_H(\Bx^0) \Delta
+%%% \\ &= J_H(\Bx^0) \Delta
 %%% ,
-%%% \end{dmath}
+%%%
+%%%\end{aligned}
+%%%\end{equation}
 %%%
 %%% then to zeroth order in \( \alpha \) this has solution
 %%%
-%%% \begin{dmath}\label{eqn:multiphysicsProblemSet2bProblem2:420}
+%%% \begin{equation}\label{eqn:multiphysicsProblemSet2bProblem2:420}
+%%%\begin{aligned}
 %%% \alpha
-%%% = -\frac{F(\Bx^0) \cdot \lr{ G \Delta + H' }}{
+%%% &= -\frac{F(\Bx^0) \cdot \lr{ G \Delta + H' }}{
 %%% (G \Delta) \cdot \lr{ G \Delta + H' }
 %%% }
-%%% =
+%%% \\ &=
 %%% - \frac{F^\T J \Delta}{\Delta^\T G J \Delta}
 %%% .
-%%% \end{dmath}
+%%%
+%%%\end{aligned}
+%%%\end{equation}
 %%%
 %%% % BOGUS thought, the 2's along the diagonal will dominate.
 %%% %With \( 2 ( 1 + \lr{ \Delta x}^2 ) \approx \) along the diagonal of the The inverse Jacobian being \( O(N^2) \)

@@ -91,8 +91,9 @@ The boxed portion is the transfer function
 %
 \paragraph{Geometrical interpretation to the change of variables}
 %
-\begin{dmath}\label{eqn:multiphysicsL18:180}
-x(t) =
+\begin{equation}\label{eqn:multiphysicsL18:180}
+\begin{aligned}
+x(t) &=
 \mathLabelBox
 [
    labelstyle={xshift=2cm},
@@ -103,7 +104,7 @@ x(t) =
 }
 {\(N \times N\)}
 \Bw(t)
-=
+\\ &=
 \begin{bmatrix}
 \Bv_1 & \Bv_2 & \cdots & \Bv_N
 \end{bmatrix}
@@ -113,12 +114,13 @@ w_2(t) \\
 \vdots \\
 w_N(t)
 \end{bmatrix}
-=
+\\ &=
 \Bv_1 w_1(t) +
 \Bv_2 w_2(t) +
 \cdots
 \Bv_N w_N(t).
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 The key to MOR is to find a way to select the important portions of these \( \Bv_i, w_i(t) \) vectors-function pairs.  This projects the system equations onto an approximation that retains the most interesting characteristics.
 %
@@ -133,8 +135,9 @@ Referring back to \cref{eqn:multiphysicsL18:10} and it's Laplace transform repre
 %
 This can be expanded around the DC value ( \( s = 0 \) )
 %
-\begin{dmath}\label{eqn:multiphysicsL18:200}
-\BF(s) = M_0 + M_1 s + M_2 s^2 + \cdots M_{q-1} s^{q-1} +
+\begin{equation}\label{eqn:multiphysicsL18:200}
+\begin{aligned}
+\BF(s) &= M_0 + M_1 s + M_2 s^2 + \cdots M_{q-1} s^{q-1} +
 \mathLabelBox
 [
    labelstyle={xshift=2cm},
@@ -147,12 +150,13 @@ M_q
 moments
 }
 s^q + \cdots
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 A reduced model of order \( q \) is defined as
 %
-\begin{dmath}\label{eqn:multiphysicsL18:240}
+\begin{equation}\label{eqn:multiphysicsL18:240}
 \BF(s) = M_0 + M_1 s + M_2 s^2 + \cdots M_{q-1} s^{q-1} + \tilde{M}_q s^q.
-\end{dmath}
+\end{equation}
 %
 %\EndArticle

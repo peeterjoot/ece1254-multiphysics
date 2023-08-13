@@ -28,35 +28,39 @@ For the record, the Laplace transform is defined as:
 %
 The only Laplace transform pair used in the lectures is that of the first derivative
 %
-\begin{dmath}\label{eqn:laplaceTransformVec:40}
-\LL(f'(t)) =
+\begin{equation}\label{eqn:laplaceTransformVec:40}
+\begin{aligned}
+\LL(f'(t)) &=
 \int_0^\infty e^{-s t} \ddt{f(t)} dt
-=
+\\ &=
 \evalrange{e^{-s t} f(t)}{0}{\infty} - (-s) \int_0^\infty e^{-s t} f(t) dt
-=
+\\ &=
 -f(0) + s \LL(f(t)).
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 Here it is loosely assumed that the real part of \( s \) is positive, and that \( f(t) \) is ``well defined'' enough that \( e^{-s \infty } f(\infty) \rightarrow 0 \).
 %
 Where used in the lectures, the Laplace transforms were of vectors such as the matrix vector product \( \LL(\BG \Bx(t)) \).  Because such a product is linear, observe that it can be expressed as the original matrix times a vector of Laplace transforms
 %
-\begin{dmath}\label{eqn:laplaceTransformVec:60}
+\begin{equation}\label{eqn:laplaceTransformVec:60}
+\begin{aligned}
 \LL( \BG \Bx(t) )
-=
+&=
 \LL {\begin{bmatrix}
 G_{i k} x_k(t)
 \end{bmatrix}}_i
-=
+\\ &=
 {\begin{bmatrix}
 G_{i k} \LL x_k(t)
 \end{bmatrix}}_i
-=
+\\ &=
 \BG
 {\begin{bmatrix}
 \LL x_i(t)
 \end{bmatrix}}_i.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 The following notation was used in the lectures for such a vector of Laplace transforms
 %

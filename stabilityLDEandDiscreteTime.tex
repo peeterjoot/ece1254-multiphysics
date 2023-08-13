@@ -55,11 +55,12 @@ This ``stability'' is due to the fact that both of the characteristic equation r
 %
 Now consider a discretized form of this LDE.  This will have the form
 %
-\begin{dmath}\label{eqn:stabilityLDEandDiscreteTime:100}
-0 =
+\begin{equation}\label{eqn:stabilityLDEandDiscreteTime:100}
+\begin{aligned}
+0 &=
 \inv{\lr{\Delta t}^2}
 \lr{ x_{n+2} - 2 x_{n-1} + x_n } + \frac{3}{\Delta t} \lr{ x_{n+1} - x_n } + 2 x_n
-=
+\\ &=
 x_{n+2} \lr{
 \inv{\lr{\Delta t}^2}
 }
@@ -74,11 +75,12 @@ x_{n} \lr{
 -\frac{3}{\Delta t}
 + 2
 },
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 or
 %
-\begin{dmath}\label{eqn:stabilityLDEandDiscreteTime:220}
+\begin{equation}\label{eqn:stabilityLDEandDiscreteTime:220}
 0
 =
 x_{n+2}
@@ -90,7 +92,7 @@ x_{n+1} \lr{
 x_{n} \lr{
 1 - 3 \Delta t + 2 \lr{ \Delta t}^2
 }.
-\end{dmath}
+\end{equation}
 %
 Note that after discretization, each subsequent index corresponds to a time shift.  Also observe that the coefficients of this discretized equation are dependent on the discretization interval size \( \Delta t \).  If the specifics of those coefficients are ignored, a general form with the following structure can be observed
 %

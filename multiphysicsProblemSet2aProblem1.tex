@@ -97,9 +97,10 @@ n_2 & -\inv{R} & \inv{R}
 %
 To apply this to an actual system, more precision is required, since subsets of the stamps may not apply to \( \BG \) for resistors connected to the reference node.  Suppose that all \( N \) resistors can be enumerated, each connecting all pairs of nodes \( i, j \), where \( i < j \) with a resistance \( R_{ij} \).  The \( r,s\) element of nodal matrix is then the sum over all the stamps, as follows
 %
-\begin{dmath}\label{eqn:multiphysicsProblemSet2a:120}
+\begin{equation}\label{eqn:multiphysicsProblemSet2a:120}
+\begin{aligned}
 \lr{\BG}_{r,s}
-=
+&=
 \sum_{0 < i < j \le N} \inv{R_{ij}} \lr{
     \delta_{ri} \delta_{si}
    +\delta_{rj} \delta_{sj}
@@ -109,19 +110,20 @@ To apply this to an actual system, more precision is required, since subsets of 
 +
 \sum_{i = 0, 0 < j \le N} \inv{R_{0j}}
    \delta_{rj} \delta_{sj}
-= \sum_{0 < i < j \le N} \inv{R_{ij}} \lr{
+\\ &= \sum_{0 < i < j \le N} \inv{R_{ij}} \lr{
    \delta_{ri} \lr{ \delta_{si} - \delta_{sj} }
    +\delta_{rj} \lr{ \delta_{sj} - \delta_{si} }
 }
 +
 \sum_{i = 0, 0 < j \le N} \inv{R_{0j}}
    \delta_{rj} \delta_{sj}
-= \sum_{0 < i < j \le N} \inv{R_{ij}}
+\\ &= \sum_{0 < i < j \le N} \inv{R_{ij}}
    \lr{ \delta_{ri} - \delta_{rj}} \lr{ \delta_{si} - \delta_{sj} }
 +
 \sum_{i = 0, 0 < j \le N} \inv{R_{0j}}
    \delta_{rj} \delta_{sj}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 Here the sum is over all the sets of nodes \( i, j \), with an allowance for multiplicities in \( R_{ij} \) between any pair of nodes \( i, j \) (i.e. a parallel resistors between any pair of nodes).
 %
@@ -191,28 +193,30 @@ The delta filtering and the nice factorization of the products in the \( \BG \) 
 %%%   \sum_{r \ne s} \Abs{\lr{ \delta_{ri} - \delta_{rj}} \lr{ \delta_{si} - \delta_{sj} }} .
 %%%\end{equation}
 %
-\begin{dmath}\label{eqn:multiphysicsProblemSet2a:280}
+\begin{equation}\label{eqn:multiphysicsProblemSet2a:280}
+\begin{aligned}
 \Bx^\T \BG \Bx
-=
+&=
 \Bx^\T \sum_s \sum_{0 < i < j \le N} \inv{R_{ij}}
    \lr{ \delta_{ri} - \delta_{rj}} \lr{ \delta_{si} - \delta_{sj} } x_s
 +
 \Bx^\T \sum_s \sum_{i = 0, 0 < j \le N} \inv{R_{0j}}
    \delta_{rj} \delta_{sj} x_s
-=
+\\ &=
 \sum_r x_r \sum_{0 < i < j \le N} \inv{R_{ij}}
    \lr{ \delta_{ri} - \delta_{rj}} \lr{ x_i - x_j }
 +
 \sum_r x_r \sum_{i = 0, 0 < j \le N} \inv{R_{0j}}
    \delta_{rj} x_j
-=
+\\ &=
 \sum_{0 < i < j \le N} \inv{R_{ij}}
    \lr{ x_i - x_j }^2
 +
 \sum_{i = 0, 0 < j \le N} \inv{R_{0j}}
    x_j^2
 \ge 0.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 With all the sums involving only resistors (positive) and squares of real numbers (voltages), the nodal matrix has been shown to be semi-positive definite as desired.
 %

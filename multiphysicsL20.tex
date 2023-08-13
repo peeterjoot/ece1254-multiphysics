@@ -69,15 +69,17 @@ This \textAndIndex{Gramian} expression results from a calculation of the ``energ
 \By(t) = \BC e^{\BA t} \Bx_0.
 \end{equation}
 The output energy is
-\begin{dmath}\label{eqn:multiphysicsLecture20:120}
+\begin{equation}\label{eqn:multiphysicsLecture20:120}
+\begin{aligned}
 \int_0^\infty \By^\T \By dt
-=
+&=
 \int_0^\infty \Bx_0^\T
 e^{\BA^\T t} \BC^\T \BC e^{\BA t} \Bx_0 dt
-=
+\\ &=
 \Bx_0^\T \BW_0 \Bx_0
-= \calE_0
-\end{dmath}
+\\ &= \calE_0
+\end{aligned}
+\end{equation}
 Consider the eigenvalues and vectors of \( \BW_0 \)
 \begin{equation}\label{eqn:multiphysicsLecture20:140}
 \BW_0 \Bx_{0, i} = \lambda_{0, i} \Bx_{0, i}.
@@ -99,16 +101,18 @@ If for any initial state \( \Bx(t_0) \) , there is a final time \( t_1 > t_0 \),
 The system is controllable if and only if the controllability Gramian \( \BW_c > 0 \).
 }
 What is the energy of the input \( \Bu^\conj(t) \) that is needed to set up \( \Bx_1 \)?  On the slides it is shown that this is
-\begin{dmath}\label{eqn:multiphysicsLecture20:200}
+\begin{equation}\label{eqn:multiphysicsLecture20:200}
 \calE_1
 = \Bx_1^\T \BW_c^{-1} \Bx_1.
-\end{dmath}
+\end{equation}
 if \( \Bx_1 \) is an eigenvector of \( \BW_c \) with eigenvalue \( \lambda_1 \), then this reduces to
-\begin{dmath}\label{eqn:multiphysicsLecture20:220}
+\begin{equation}\label{eqn:multiphysicsLecture20:220}
+\begin{aligned}
 \calE_1
-= \inv{\lambda_1} \Bx_1^\T \Bx_1
-= \inv{\lambda_1}.
-\end{dmath}
+&= \inv{\lambda_1} \Bx_1^\T \Bx_1
+\\ &= \inv{\lambda_1}.
+\end{aligned}
+\end{equation}
 These eigenvalues provide information about how much energy is required to achieve any given state.
 
 The purpose of considering observability and controllability is to help determine what modes can be safely discarded to reduce the model order.  A state that cannot be achieved without excessive energy cost is not likely to be of interest.

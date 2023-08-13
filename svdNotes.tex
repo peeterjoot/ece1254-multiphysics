@@ -29,34 +29,34 @@ Here I'll review some of the key ideas from the MIT OCW SVD lecture by Prof.\ Gi
 %
 The idea behind the SVD is to find an orthogonal basis that relates the image space of the transformation, as well as the basis for the vectors that the transformation applies to.  That is a relation of the form
 %
-\begin{dmath}\label{eqn:svdNotes:281}
+\begin{equation}\label{eqn:svdNotes:281}
 \Bu_i = M \Bv_j
-\end{dmath}
+\end{equation}
 %
 Where \( \Bv_j \) are orthonormal basis vectors, and \( \Bu_i \) are orthonormal basis vectors for the image space.  %Strang's lectures call these the row and column spaces (or reverse?)
 %
 Suppose that such a set of vectors can be computed and that \( M \) has a representation of the desired form
 %
-\begin{dmath}\label{eqn:svdNotes:301}
+\begin{equation}\label{eqn:svdNotes:301}
 M = U \Sigma V^\conj
-\end{dmath}
+\end{equation}
 %
 where
-\begin{dmath}\label{eqn:svdNotes:321}
+\begin{equation}\label{eqn:svdNotes:321}
 U =
 \begin{bmatrix}
    \Bu_1 & \Bu_2 & \cdots & \Bu_m
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 %
 and
 %
-\begin{dmath}\label{eqn:svdNotes:341}
+\begin{equation}\label{eqn:svdNotes:341}
 V =
 \begin{bmatrix}
    \Bv_1 & \Bv_2 & \cdots & \Bv_n
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 %
 By left or right multiplication of \( M \) with its (conjugate) transpose,
 the decomposed form of these products can be observed to have a very simple form
@@ -261,7 +261,8 @@ U = \inv{\sqrt{5}}
 %
 Multiplying out \( U \Sigma V^\conj \) gives
 %
-\begin{dmath}\label{eqn:svdNotes:741}
+\begin{equation}\label{eqn:svdNotes:741}
+\begin{aligned}
 \inv{\sqrt{5}}
 \begin{bmatrix}
 1 & 2 \\
@@ -276,7 +277,7 @@ Multiplying out \( U \Sigma V^\conj \) gives
 1 & 1 \\
 1 & -1
 \end{bmatrix}
-=
+&=
 \begin{bmatrix}
 1 & 2 \\
 2 & -1
@@ -289,7 +290,7 @@ Multiplying out \( U \Sigma V^\conj \) gives
 1 & 1 \\
 1 & -1
 \end{bmatrix}
-=
+\\ &=
 \begin{bmatrix}
 1 & 0 \\
 2 & 0
@@ -298,12 +299,13 @@ Multiplying out \( U \Sigma V^\conj \) gives
 1 & 1 \\
 1 & -1
 \end{bmatrix}
-=
+\\ &=
 \begin{bmatrix}
 1 & 1 \\
 2 & 2
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 It appears that this works.  This has not demonstrated why that should be, and could be due to luck with signs.  To fully understand how to do this type of computation, more theoretical work would be required.  That is probably a good reason to leave such a task to computational software.
 }

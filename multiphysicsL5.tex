@@ -30,9 +30,9 @@ Related to a theorem on one of the slides:
 %
 A matrix \( [ M_{ij} ] \) is strictly diagonally dominant if
 %
-\begin{dmath}\label{eqn:multiphysicsL5:40}
-   \Abs{M_{ii}} > \sum_{j \ne i} \Abs{ M_{ij} } \quad \forall i
-\end{dmath}
+\begin{equation}\label{eqn:multiphysicsL5:40}
+\Abs{M_{ii}} > \sum_{j \ne i} \Abs{ M_{ij} } \quad \forall i
+\end{equation}
 }
 %
 For example, the stamp matrix
@@ -59,15 +59,15 @@ However, even with strict dominance, there will be trouble with ill posed (pertu
 %
 Round off error examples with \textAndIndex{double precision}
 %
-\begin{dmath}\label{eqn:multiphysicsL5:100}
+\begin{equation}\label{eqn:multiphysicsL5:100}
 \lr{ 1 - 1 } + \pi 10^{-17} = \pi 10^{-17},
-\end{dmath}
+\end{equation}
 %
 vs.
 %
-\begin{dmath}\label{eqn:multiphysicsL5:120}
+\begin{equation}\label{eqn:multiphysicsL5:120}
 \lr{ 1 + \pi 10^{-17} } -1 = 0.
-\end{dmath}
+\end{equation}
 %
 This is demonstrated by
 %
@@ -96,7 +96,7 @@ Note that a union and bitfield \citep{peeterjRoundingCpp} can be useful for expl
 %
 For a matrix system \( \BM x = \Bb \) in column format, with
 %
-\begin{dmath}\label{eqn:multiphysicsL5:140}
+\begin{equation}\label{eqn:multiphysicsL5:140}
 \begin{bmatrix}
 \BM_1 & \BM_2 & \cdots & \BM_N
 \end{bmatrix}
@@ -107,11 +107,12 @@ For a matrix system \( \BM x = \Bb \) in column format, with
    x_N
 \end{bmatrix}
 = \Bb.
-\end{dmath}
+\end{equation}
 %
 This can be written as
 %
-\begin{dmath}\label{eqn:multiphysicsL5:160}
+\begin{equation}\label{eqn:multiphysicsL5:160}
+\begin{aligned}
 \mathLabelBox
 {
    x_1
@@ -126,14 +127,15 @@ This can be written as
    x_2
 }
 {weight}
-   \BM_2 + \cdots x_N \BM_N = \Bb.
-\end{dmath}
+   \BM_2 + \cdots x_N \BM_N \\ &= \Bb.
+\end{aligned}
+\end{equation}
 %
 Linear dependence means
 %
-\begin{dmath}\label{eqn:multiphysicsL5:180}
+\begin{equation}\label{eqn:multiphysicsL5:180}
 y_1 \BM_1 + y_2 \BM_2 + \cdots y_N \BM_N = 0,
-\end{dmath}
+\end{equation}
 %
 or \( M \By = 0 \).
 %
@@ -149,9 +151,9 @@ col(M) lin. dep. & \(\Bx\) exists.  \( \infty \) solutions & No solution \\ \hli
 %
 With a linear dependency an additional solution, given solution \( \Bx \) is \( \Bx^1 = \Bx + \alpha y \).  This becomes relevant for numerical processing since for a system \( M \Bx^1 = \Bb \) a \( \alpha M \By \) can often be found, for which
 %
-\begin{dmath}\label{eqn:multiphysicsL5:200}
+\begin{equation}\label{eqn:multiphysicsL5:200}
 M \Bx + \alpha M \By = \Bb,
-\end{dmath}
+\end{equation}
 %
 where \( \alpha M \By \) is of order \( 10^{-20} \).
 %
@@ -161,9 +163,9 @@ where \( \alpha M \By \) is of order \( 10^{-20} \).
 %
 Consider a perturbation to the system \( M \Bx = \Bb \)
 %
-\begin{dmath}\label{eqn:multiphysicsL5:240}
+\begin{equation}\label{eqn:multiphysicsL5:240}
 \lr{ M + \delta M } \lr{ \Bx + \delta \Bx } = \Bb.
-\end{dmath}
+\end{equation}
 %
 Some vector norms
 %
@@ -200,15 +202,15 @@ A matrix operation \( \By = M \Bx \) can be thought of as a transformation as in
 %
 The 1-norm for a Matrix is defined as
 %
-\begin{dmath}\label{eqn:multiphysicsL5:340}
+\begin{equation}\label{eqn:multiphysicsL5:340}
 \Norm{ M } = \max_{ \Norm{\Bx}_1 = 1 } \Norm{ M \Bx },
-\end{dmath}
+\end{equation}
 %
 and the matrix 2-norm is defined as
 %
-\begin{dmath}\label{eqn:multiphysicsL5:360}
+\begin{equation}\label{eqn:multiphysicsL5:360}
 \Norm{ M }_2 = \max_{ \Norm{\Bx}_2 = 1 } \Norm{ M \Bx }_2.
-\end{dmath}
+\end{equation}
 %
 %\EndArticle
 %\EndNoBibArticle

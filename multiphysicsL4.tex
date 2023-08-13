@@ -203,20 +203,22 @@ Using this LU decomposition is generally superior to standard Gaussian eliminati
 %
 The steps are
 %
-\begin{dmath}\label{eqn:multiphysicsL4:280}
+\begin{equation}\label{eqn:multiphysicsL4:280}
+\begin{aligned}
 b
-= M x
-= L \lr{ U x}
+&= M x
+\\ &= L \lr{ U x}
 \equiv L y.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 The matrix equation \( L y = b \) can now be solved by substituting first  \( y_1 \), then \( y_2 \), and finally \( y_3 \).  This is called \textAndIndex{forward substitution}.
 %
 The final solution is
 %
-\begin{dmath}\label{eqn:multiphysicsL4:300}
-   U x = y,
-\end{dmath}
+\begin{equation}\label{eqn:multiphysicsL4:300}
+U x = y,
+\end{equation}
 %
 using \textAndIndex{back substitution}.
 %

@@ -23,21 +23,23 @@ e^{ j (n -m )\omega_0 t_k}
 This interior sum has the value \( 2 N + 1 \) when \( n = m \).  For \( n \ne m \), and
 \( a = e^{j (n -m ) \frac{2 \pi}{2 N + 1}} \), this is
 %
-\begin{dmath}\label{eqn:discreteFourier:100}
-\sum_{k = -N}^N
+\begin{equation}\label{eqn:discreteFourier:100}
+\begin{aligned}
+\sum_{k &= -N}^N
 e^{ j (n -m )\omega_0 t_k}
-=
+\\ &=
 \sum_{k = -N}^N
 e^{ j (n -m )\omega_0 \frac{T k}{2 N + 1}}
-=
-\sum_{k = -N}^N a^k
-=
-a^{-N} \sum_{k = -N}^N a^{k+ N}
-=
-a^{-N} \sum_{r = 0}^{2 N} a^{r}
-=
+\\ &=
+\sum_{k= -N}^N a^k
+\\ &=
+a^{-N} \sum_{k= -N}^N a^{k+ N}
+\\ &=
+a^{-N} \sum_{r= 0}^{2 N} a^{r}
+\\ &=
 a^{-N} \frac{a^{2 N + 1} - 1}{a - 1}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 Since \( a^{2 N + 1} = e^{2 \pi j (n - m)} = 1 \), this sum is zero when \( n \ne m \).  This means that
 %

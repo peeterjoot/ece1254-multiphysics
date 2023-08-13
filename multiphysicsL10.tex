@@ -73,15 +73,17 @@ x^{k+1} - x^\conj = x^k - x^\conj + \lr{ f(x^k) - f(x^\conj) }.
 \end{equation}
 
 The last term can be quantified using the mean value theorem \ref{thm:multiphysicsL10:140}, giving
-\begin{dmath}\label{eqn:multiphysicsL10:140}
+\begin{equation}\label{eqn:multiphysicsL10:140}
+\begin{aligned}
 x^{k+1} - x^\conj
-= x^k - x^\conj +
+&= x^k - x^\conj +
 \evalbar{\PD{x}{f}}{\tilde{x}} \lr{ x^k - x^\conj }
-=
+\\ &=
 \lr{ x^k - x^\conj }
 \lr{
 1 + \evalbar{\PD{x}{f}}{\tilde{x}}  }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 
 The absolute value is thus
 \begin{equation}\label{eqn:multiphysicsL10:160}

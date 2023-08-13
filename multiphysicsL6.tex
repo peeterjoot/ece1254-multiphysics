@@ -26,21 +26,21 @@
 %
 Recall that the matrix norm of \( M \), for the system \( \By = M \Bx \) was defined as
 %
-\begin{dmath}\label{eqn:multiphysicsL6:21}
+\begin{equation}\label{eqn:multiphysicsL6:21}
 \Norm{M} = \max_{\Norm{\Bx} = 1} \Norm{ M \Bx }.
-\end{dmath}
+\end{equation}
 %
 The \( L_2 \) norm will typically be used, resulting in a matrix norm of
 %
-\begin{dmath}\label{eqn:multiphysicsL6:41}
+\begin{equation}\label{eqn:multiphysicsL6:41}
 \Norm{M}_2 = \max_{\Norm{\Bx}_2 = 1} \Norm{ M \Bx }_2.
-\end{dmath}
+\end{equation}
 %
 It can be shown that
 %
-\begin{dmath}\label{eqn:multiphysicsL6:61}
-   \Norm{M}_2 = \max_i \sigma_i(M),
-\end{dmath}
+\begin{equation}\label{eqn:multiphysicsL6:61}
+\Norm{M}_2 = \max_i \sigma_i(M),
+\end{equation}
 %
 where \( \sigma_i(M) \) are the (SVD) singular values.
 %
@@ -49,14 +49,14 @@ where \( \sigma_i(M) \) are the (SVD) singular values.
 \makedefinition{Singular value decomposition (SVD).}{dfn:multiphysicsL6:1}{
         Given \( M \in \text{\R{m \times n}} \), a factoring of \( M \) can be found with the form
 %
-\begin{dmath}\label{eqn:multiphysicsL6:81}
+\begin{equation}\label{eqn:multiphysicsL6:81}
 M = U \Sigma V^\T,
-\end{dmath}
+\end{equation}
 %
 where \( U \) and \( V\) are orthogonal matrices such that \( U^\T U = 1 \), and \( V^\T V = 1 \), and
 %
-\begin{dmath}\label{eqn:multiphysicsL6:101}
-   \Sigma =
+\begin{equation}\label{eqn:multiphysicsL6:101}
+\Sigma =
 \begin{bmatrix}
   \sigma_1 &          &        &          &         &         &\\
            & \sigma_2 &        &          &         &         &\\
@@ -66,7 +66,7 @@ where \( U \) and \( V\) are orthogonal matrices such that \( U^\T U = 1 \), and
            &          &          &        &         & \ddots  &         \\
            &          &          &        &         &         & 0       \\
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 %
 The values \( \sigma_i, i \le \min(n,m) \) are called the singular values of \( M \).  The singular values are subject to the ordering
 %
@@ -82,7 +82,7 @@ If \(r\) is the rank of \( M \), then the \( \sigma_r \) above is the minimum no
 %
 Observe that the condition \( U^\T U = 1 \) is a statement of orthonormality.  In terms of column vectors \( \Bu_i \), such a product written out explicitly is
 %
-\begin{dmath}\label{eqn:multiphysicsL6:301}
+\begin{equation}\label{eqn:multiphysicsL6:301}
 \begin{bmatrix}
 \Bu_1^\T \\ \Bu_2^\T \\ \vdots \\ \Bu_m^\T
 \end{bmatrix}
@@ -96,14 +96,14 @@ Observe that the condition \( U^\T U = 1 \) is a statement of orthonormality.  I
   &   & \ddots & \\
   &   &        & 1
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 %
 This is both normality \( \Bu_i^\T \Bu_i = 1 \), and orthonormality \( \Bu_i^\T \Bu_j = 1, i \ne j \).
 %
 \makeexample{A \( 2 \times 2 \) case.}{example:multiphysicsL6:1}{
 (for column vectors \( \Bu_i, \Bv_j \)).
 %
-\begin{dmath}\label{eqn:multiphysicsL6:281}
+\begin{equation}\label{eqn:multiphysicsL6:281}
 M =
 \begin{bmatrix}
 \Bu_1 & \Bu_2
@@ -116,7 +116,7 @@ M =
 \Bv_1^\T \\
 \Bv_2^\T
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 %
 Consider \( \By = M \Bx \), and take an \( \Bx \) with \( \Norm{\Bx}_2 = 1 \)
 %
@@ -130,39 +130,39 @@ A very nice video treatment of SVD by Prof Gilbert Strang can be found in \citep
 %
 Given a perturbation of \( M \Bx = \Bb \) to
 %
-\begin{dmath}\label{eqn:multiphysicsL6:121}
-        \lr{ M + \delta M }
+\begin{equation}\label{eqn:multiphysicsL6:121}
+\lr{ M + \delta M }
         \lr{ \Bx + \delta \Bx } = \Bb,
-\end{dmath}
+\end{equation}
 %
 or
-\begin{dmath}\label{eqn:multiphysicsL6:141}
-        \cancel{ M \Bx - \Bb } + \delta M \Bx + M \delta \Bx + \delta M \delta \Bx = 0.
-\end{dmath}
+\begin{equation}\label{eqn:multiphysicsL6:141}
+\cancel{ M \Bx - \Bb } + \delta M \Bx + M \delta \Bx + \delta M \delta \Bx = 0.
+\end{equation}
 %
 This gives
 %
-\begin{dmath}\label{eqn:multiphysicsL6:161}
-        M \delta \Bx = - \delta M \Bx - \delta M \delta \Bx,
-\end{dmath}
+\begin{equation}\label{eqn:multiphysicsL6:161}
+M \delta \Bx = - \delta M \Bx - \delta M \delta \Bx,
+\end{equation}
 %
 or
-\begin{dmath}\label{eqn:multiphysicsL6:181}
-        \delta \Bx = - M^{-1} \delta M \lr{ \Bx + \delta \Bx }.
-\end{dmath}
+\begin{equation}\label{eqn:multiphysicsL6:181}
+\delta \Bx = - M^{-1} \delta M \lr{ \Bx + \delta \Bx }.
+\end{equation}
 %
 Taking norms
 %
-\begin{dmath}\label{eqn:multiphysicsL6:201}
+\begin{equation}\label{eqn:multiphysicsL6:201}
 \Norm{ \delta \Bx}_2 = \Norm{
         M^{-1} \delta M \lr{ \Bx + \delta \Bx }
 }_2
 \le
 \Norm{ M^{-1} }_2 \Norm{ \delta M }_2 \Norm{ \Bx + \delta \Bx }_2,
-\end{dmath}
+\end{equation}
 %
 or
-\begin{dmath}\label{eqn:multiphysicsL6:221}
+\begin{equation}\label{eqn:multiphysicsL6:221}
 \mathLabelBox
 [
    labelstyle={yshift=1.2em},
@@ -195,7 +195,7 @@ or
 {
 relative perturbation of \( M \)
 }.
-\end{dmath}
+\end{equation}
 %
 The \textAndIndex{conditioning number} can be shown to be
 %

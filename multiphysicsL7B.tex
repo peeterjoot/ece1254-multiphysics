@@ -53,15 +53,17 @@ To prove this, consider the coordinate representation
 \Psi = \inv{2} y_a M_{ab} y_b - y_b b_b,
 \end{equation}
 for which the derivatives are
-\begin{dmath}\label{eqn:multiphysicsL7:500}
-\PD{y_i}{\Psi} =
+\begin{equation}\label{eqn:multiphysicsL7:500}
+\begin{aligned}
+\PD{y_i}{\Psi} &=
 \inv{2} M_{ib} y_b
 +
 \inv{2} y_a M_{ai}
 - b_i
-=
+\\ &=
 \lr{ M \By - \Bb }_i.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 The last operation above was possible because \( M = M^\T \).  Setting all of these equal to zero, and rewriting this as a matrix relation gives
 \begin{equation}\label{eqn:multiphysicsL7:520}
@@ -86,24 +88,31 @@ The method is
 }{direction},
 \end{equation}
 where the direction is
-\begin{dmath}\label{eqn:multiphysicsL7:120}
-\Bd^{(k)} = - \spacegrad \Phi = \Bb - M \Bx^{(k)} = r^{(k)}.
-\end{dmath}
+\begin{equation}\label{eqn:multiphysicsL7:120}
+\begin{aligned}
+\Bd^{(k)} 
+   &= - \spacegrad \Phi
+\\ &= \Bb - M \Bx^{(k)}
+\\ &= r^{(k)}.
+\end{aligned}
+\end{equation}
 \paragraph{Optimal step size}
 \index{step size}
 %
 The next iteration expansion of the energy function \( \Phi \lr{ \Bx^{(k+1)} } \) is
-\begin{dmath}\label{eqn:multiphysicsL7:140}
+\begin{equation}\label{eqn:multiphysicsL7:140}
+\begin{aligned}
 \Phi \lr{ \Bx^{(k+1)} }
-= \Phi\lr{ \Bx^{(k)} + \alpha_k \Bd^{(k)} }
-=
+&= \Phi\lr{ \Bx^{(k)} + \alpha_k \Bd^{(k)} }
+\\ &=
 \inv{2}
 \lr{ \Bx^{(k)} + \alpha_k \Bd^{(k)} }^\T
 M
 \lr{ \Bx^{(k)} + \alpha_k \Bd^{(k)} }
 -
 \lr{ \Bx^{(k)} + \alpha_k \Bd^{(k)} }^\T \Bb.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 To find the minimum, the derivative of both sides with respect to \( \alpha_k \) is required
 \begin{equation}\label{eqn:multiphysicsL7:540}

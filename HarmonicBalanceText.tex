@@ -185,8 +185,9 @@ the derivative has the form
 The Fourier component representation of the MNA equations can be written as
 \singleAndDoubleColumnVariations
 {
-\begin{dmath}\label{eqn:ece1254projectReport:600}
-0 = \sum_{n = -N}^N e^{j n \omega_0 t}
+\begin{equation}\label{eqn:ece1254projectReport:600}
+\begin{aligned}
+0 &= \sum_{n = -N}^N e^{j n \omega_0 t}
 \Biglr{
    \lr{ \BG + j n \omega_0 \BC }
 \begin{bmatrix}
@@ -201,10 +202,11 @@ U_n^{(1)} \\
 U_n^{(2)} \\
 \vdots \\
 \end{bmatrix}
-- \sum_{i = 1}^S I_i \Bd_i
+- \sum_{i= 1}^S I_i \Bd_i
 W_n^{(i)}
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 }
 {
 \begin{equation}\label{eqn:ece1254projectReport:600}
@@ -235,7 +237,8 @@ Given the
 assumption of periodicity, each of these equations must separately equal zero for each \( ( n, i ) \) pair, or
 \singleAndDoubleColumnVariations
 {
-\begin{dmath}\label{eqn:ece1254projectReport:540}
+\begin{equation}\label{eqn:ece1254projectReport:540}
+\begin{aligned}
 \lr{
 \BG + j n \omega_0 \BC
 }
@@ -244,7 +247,7 @@ V_n^{(1)} \\
 V_n^{(2)} \\
 \vdots \\
 \end{bmatrix}
-=
+&=
 [\Bb_i \cdots \Bb_M]
 \begin{bmatrix}
 U_n^{(1)} \\
@@ -254,7 +257,8 @@ U_n^{(2)} \\
 + \sum_{i = 1}^S I_i \Bd_i
 W_n^{(i)}
 .
-\end{dmath}
+\end{aligned}
+\end{equation}
 }
 {
 \begin{equation}\label{eqn:ece1254projectReport:540}
@@ -394,7 +398,7 @@ v^{(2)}(t) \\
 the time domain equations for this circuit are
 \singleAndDoubleColumnVariations
 {
-\begin{dmath}\label{eqn:ece1254projectReport:1320}
+\begin{equation}\label{eqn:ece1254projectReport:1320}
 \BG \Bv(t)
 +\BC \Bv'(t)
 =
@@ -408,7 +412,7 @@ i_{\textrm{s}}(t) \\
 +
 I_0 \Bd
 e^{ (v^{(1)}(t) - v^{(2)}(t))/V_{\textrm{T}}}.
-\end{dmath}
+\end{equation}
 }
 {
 \begin{equation}\label{eqn:ece1254projectReport:1320}
@@ -510,21 +514,20 @@ I_0
 \end{equation}
 In the last step \( \BE = \BF^{-1} \Bepsilon \) has been factored out (in its inverse Fourier form).
 With
-\begin{dmath}\label{eqn:ece1254projectReport:920}
+\begin{equation}\label{eqn:ece1254projectReport:920}
 \BD =
 \begin{bmatrix}
 \Bd & 0 & 0 \\
 0 & \Bd & 0 \\
 0 & 0   & \Bd \\
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 the current can now be written in a compact form
-%\begin{dmath}\label{eqn:ece1254projectReport:960}
 \boxedEquation{eqn:ece1254projectReport:960}{
 \calI(\BV) =
 I_0 \BD \BF^{-1} \Bepsilon(\BV),
 }
-%\end{dmath}
+%
 however, an appropriate form for \( \Bepsilon \) must still be found.
 \begin{equation}\label{eqn:ece1254projectReport:980}
 \begin{aligned}
@@ -562,15 +565,16 @@ v^{(1)}_{-1} - v^{(2)}_{-1}
 \end{equation}
 
 This difference of Fourier component vectors needs to be expressed in terms of the big vector of unknown Fourier components \( \BV \)
-\begin{dmath}\label{eqn:ece1254projectReport:1000}
+\begin{equation}\label{eqn:ece1254projectReport:1000}
+\begin{aligned}
 \BV^{(1)} - \BV^{(2)}
-=
+&=
 \begin{bmatrix}
 V^{(1)}_{-1} - V^{(2)}_{-1} \\
 V^{(1)}_{0} - V^{(2)}_{0} \\
 V^{(1)}_{1} - V^{(2)}_{1} \\
 \end{bmatrix}
-=
+\\ &=
 \begin{bmatrix}
 1 & -1 & 0 & 0 & 0 & 0 \\
 0 &  0 & 1 & -1 & 0 & 0 \\
@@ -584,7 +588,8 @@ V_{0}^{(2)} \\
 V_{1}^{(1)} \\
 V_{1}^{(2)} \\
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 This is just
 \begin{equation}\label{eqn:ece1254projectReport:1400}
 \BV^{(1)} - \BV^{(2)}
@@ -612,7 +617,6 @@ With
 }
 %\end{equation}
 a compact matrix representation of the nonlinear current is now complete
-%\begin{dmath}\label{eqn:ece1254projectReport:1080}
 \boxedEquation{eqn:ece1254projectReport:1080}{
 \Bepsilon(\BV)
 =
@@ -622,7 +626,7 @@ e^{\Bh_2^\T \BV} \\
 e^{\Bh_3^\T \BV} \\
 \end{bmatrix}.
 }
-%\end{dmath}
+%
 \mysubsection{Other nonlinear sources.}
 \index{voltage controlled voltage source!nonlinear}
 The procedure above can be adapted without significant modification to other nonlinear current sources that are dependent on the difference in the voltages across their nodes (such as the power-law current sources specified by Pnnnnn lines in the HB netlist parser.)  A small change is required for voltage controlled sources.  Recall that the \( \BG \) stamp for such a source included a source line of the form
@@ -665,24 +669,24 @@ where the \( \Bh_i \) are constructed with \cref{eqn:ece1254projectReport:920} a
 With a compact matrix representation of the nonlinear current, attention can now be turned to the Jacobian of the nonlinear current.
 Let \( \BA = I_0 \BD \BF^{-1} = [ a_{ij} ]_{ij} \).
 The coordinates of the nonlinear current (with summation implied) are
-\begin{dmath}\label{eqn:ece1254projectReport:1120}
-\calI_i = a_{ik} \epsilon_k = a_{ik} \exp\lr{ \Bh_k^\T \BV }.
-\end{dmath}
+\begin{equation}\label{eqn:ece1254projectReport:1120}
+\begin{aligned}
+\calI_i &= 
+a_{ik} \epsilon_k= a_{ik} \exp\lr{ \Bh_k^\T \BV }.
+\end{aligned}
+\end{equation}
 so the Jacobian components are
-\begin{dmath}\label{eqn:ece1254projectReport:1140}
+\begin{equation}\label{eqn:ece1254projectReport:1140}
+\begin{aligned}
 [\BJ^{\calI}]_{ij}
-=
-a_{ik} \epsilon_k = a_{ik}
-\PD{V_j}{}
-\exp\lr{ \Bh_k^\T \BV }
-=
-a_{ik}
-h_{kj}
-\exp\lr{ \Bh_k^\T \BV }.
-\end{dmath}
+&= a_{ik} \epsilon_k
+\\ &= a_{ik} \PD{V_j}{} \exp\lr{ \Bh_k^\T \BV }
+\\ &= a_{ik} h_{kj} \exp\lr{ \Bh_k^\T \BV }.
+\end{aligned}
+\end{equation}
 
 Back in matrix form, after factoring out the \( \BA \), the Jacobian is
-\begin{dmath}\label{eqn:ece1254projectReport:1141}
+\begin{equation}\label{eqn:ece1254projectReport:1141}
 \BJ^{\calI}
 =
 \BA
@@ -690,10 +694,9 @@ Back in matrix form, after factoring out the \( \BA \), the Jacobian is
 h_{ij}
 \exp\lr{ \Bh_i^\T \BV }
 \end{bmatrix}}_{ij}.
-\end{dmath}
+\end{equation}
 The second factor has all the rows of \( \BH \), but each multiplied by an exponential, so the Jacobian for the nonlinear current
 is now completely determined
-%\begin{dmath}\label{eqn:ece1254projectReport:1200}
 \boxedEquation{eqn:ece1254projectReport:1200}{
 \BJ^{\calI}( \BV ) =
 I_0 \BD \BF^{-1}
@@ -702,7 +705,6 @@ I_0 \BD \BF^{-1}
 \Bh_2^\T \exp\lr{ \Bh_2^\T \BV } \\
 \vdots
 \end{bmatrix}.
-%\end{dmath}
 }
 
 A quick sanity check of dimensions seems worthwhile, and shows that all is well
@@ -726,37 +728,39 @@ I_0 \BD \BF^{-1}
 \vdots
 \end{bmatrix}
 \end{equation}
-\begin{dmath}\label{eqn:ece1254projectReport:1420}
-\BJ^{\calI}( \BV ) =
+\begin{equation}\label{eqn:ece1254projectReport:1420}
+\begin{aligned}
+\BJ^{\calI}( \BV ) &=
 I_0 \BD \BF^{-1}
 \begin{bmatrix}
 \Bh_1^\T \evalbar{ g'(x)}{x= \Bh_1^\T \BV } \\
 \Bh_2^\T \evalbar{ g'(x)}{x= \Bh_2^\T \BV } \\
 \vdots
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 \end{subequations}
 Note that for voltage controlled voltage sources the leading \( I_0 \BD \BF^{-1} \) factor must be modified as specified in \cref{eqn:ece1254projectReport:1124}.
 \mysubsection{Newton's method solution.}
 \index{Newton's method}
 All the pieces required for a Newton's method solution are now in place.
 The goal is to find a value of \( \BV \) that provides the zero
-\begin{dmath}\label{eqn:ece1254projectReport:1220}
+\begin{equation}\label{eqn:ece1254projectReport:1220}
 f(\BV) = \BY \BV - \BI - \calI(\BV).
-\end{dmath}
+\end{equation}
 Expansion to first order around an initial guess \( \BV^0 \), gives
-\begin{dmath}\label{eqn:ece1254projectReport:1240}
+\begin{equation}\label{eqn:ece1254projectReport:1240}
 f( \BV^0 + \Delta \BV ) = f(\BV^0) + \BJ(\BV^0) \Delta \BV \approx 0,
-\end{dmath}
+\end{equation}
 where the full Jacobian of \( f(\BV) \) is
-\begin{dmath}\label{eqn:ece1254projectReport:1260}
+\begin{equation}\label{eqn:ece1254projectReport:1260}
 \BJ(\BV) = \BY - \BJ^{\calI}(\BV).
-\end{dmath}
+\end{equation}
 
 The Newton's method refinement of the initial guess follows by inversion
-\begin{dmath}\label{eqn:ece1254projectReport:1280}
+\begin{equation}\label{eqn:ece1254projectReport:1280}
 \Delta \BV = -\lr{ \BY - \BJ^{\calI}(\BV^0) }^{-1} f(\BV^0).
-\end{dmath}
+\end{equation}
 
 The nonlinearities of some of the circuits that were solved as tests required source stepping, as the Jacobian grew beyond the representable range of the double matrix representation in some cases and became uninvertible.
 A heuristic that was found effective was to half the step size for each Newton's method iteration that the Jacobian became ill-conditioned, and to double it for each iteration where convergence was achieved.
@@ -884,12 +888,14 @@ Measuring the respective slopes (using the matlab function polyfit), the cpu tim
 %\end{figure*}
 \mysubsection{Power law nonlinearities.}
 As a test for the implementation's support of \textbf{Plabel} form conductance models (voltage differences scaled and raised to a power), two of the diodes in the bridge rectifier circuit were replaced with an 8 term Taylor approximation
-\begin{dmath}\label{eqn:ece1254projectReport:1480}
-i_{\textrm{d}}(t) = I_0 \lr{ e^{(v^{(n_1)} - v^{(n_2)})/V_{\textrm{T}}} - 1}
+\begin{equation}\label{eqn:ece1254projectReport:1480}
+\begin{aligned}
+i_{\textrm{d}}(t) &= I_0 \lr{ e^{(v^{(n_1)} - v^{(n_2)})/V_{\textrm{T}}} - 1}
 \approx
-I_0 \sum_{k=1}^8
+I_0 \sum_{k =1}^8
 \inv{k!} \lr{(v^{(n_1)} - v^{(n_2)})/V_{\textrm{T}}}^k
-\end{dmath}
+\end{aligned}
+\end{equation}
 The results are plotted in \cref{fig:bridgeRectifierPowSourceAndOutputVoltagesFig2} for a single frequency source.
 \imageFigureHere{../figures/ece1254-multiphysics/report/bridgeRectifierPowSourceAndOutputVoltagesFig2.pdf}{Source and output voltages for partial approximate bridge rectifier.}{fig:bridgeRectifierPowSourceAndOutputVoltagesFig2}{3.0in}{proj:makefigures.m}
 
@@ -960,21 +966,23 @@ e^{ j (n -m )\omega_0 t_k}
 This interior sum has the value \( 2 N + 1 \) when \( n = m \).
 For \( n \ne m \), and
 \( a = e^{j (n -m ) \frac{2 \pi}{2 N + 1}} \), this is
-\begin{dmath}\label{eqn:ece1254projectReport:100}
+\begin{equation}\label{eqn:ece1254projectReport:100}
+\begin{aligned}
 \sum_{k = -N}^N
 e^{ j (n -m )\omega_0 t_k}
-=
+&=
 \sum_{k = -N}^N
 e^{ j (n -m )\omega_0 \frac{T k}{2 N + 1}}
-=
-\sum_{k = -N}^N a^k
-=
-a^{-N} \sum_{k = -N}^N a^{k+ N}
-=
-a^{-N} \sum_{r = 0}^{2 N} a^{r}
-=
+\\ &=
+\sum_{k= -N}^N a^k
+\\ &=
+a^{-N} \sum_{k= -N}^N a^{k+ N}
+\\ &=
+a^{-N} \sum_{r= 0}^{2 N} a^{r}
+\\ &=
 a^{-N} \frac{a^{2 N + 1} - 1}{a - 1}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 Since \( a^{2 N + 1} = e^{2 \pi j (n - m)} = 1 \), this sum is zero when \( n \ne m \).
 This means that
 \begin{equation}\label{eqn:ece1254projectReport:120}

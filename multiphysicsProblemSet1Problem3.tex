@@ -134,25 +134,25 @@ This plot was generated with a call to \matlabFuncPath{plotHeatQ(60, 1, 0)}{ps1:
 %
 It is desirable to keep the variation of the \( H_i \) term small.  That difference between two adjacent intervals scales with the squared sine
 %
-\begin{dmath}\label{eqn:multiphysicsProblemSet1Problem3:80}
+\begin{equation}\label{eqn:multiphysicsProblemSet1Problem3:80}
 \Delta \lr{ \sin^2 (2 \pi x) }
 \approx
 4 \pi \sin \lr{ 2 \pi x} \cos \lr{ 2 \pi x } \Delta x
 = 2 \pi \sin \lr{ 4 \pi x } \Delta x.
-\end{dmath}
+\end{equation}
 %
 This is biggest when the sine is near unity.  If the heat terms are to differ by no more than a fraction \( f \) then \( \Delta x \) can be determined from
 %
-\begin{dmath}\label{eqn:multiphysicsProblemSet1Problem3:100}
+\begin{equation}\label{eqn:multiphysicsProblemSet1Problem3:100}
 f H^i \approx H^i - H^{i-1}
 \approx 2 \pi \Delta x H^i.
 = \frac{2 \pi}{N}  H^i.
-\end{dmath}
+\end{equation}
 %
 That is
-\begin{dmath}\label{eqn:multiphysicsProblemSet1Problem3:120}
+\begin{equation}\label{eqn:multiphysicsProblemSet1Problem3:120}
 N \approx \frac{2 \pi}{f}.
-\end{dmath}
+\end{equation}
 %
 For example, if \( f = 1/10 \) is desired, then \( N \approx 60 \) can be picked.  That was the value used in the plot above.
 %

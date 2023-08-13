@@ -43,15 +43,17 @@ Since the new residual is orthogonal to all the previous search directions \( \B
 %
 The numerator of \( \beta_k \) can be tackled by noting that the transformed direction vector \( \Bq \) is a scaled difference of residuals.  Taking dot products
 %
-\begin{dmath}\label{eqn:conjugateGradientAlgorithm:420}
+\begin{equation}\label{eqn:conjugateGradientAlgorithm:420}
+\begin{aligned}
 \Bq \cdot \Br^{(k+1)}
-=
+&=
 \inv{\alpha_k} \lr{ \Br^{(k)} - \Br^{(k+1)} } \cdot \Br^{(k+1)}
-=
+\\ &=
 \inv{\alpha_k} \lr{ \cancel{\Bd^{(k)}} - \beta_{k-1} \cancel{\Bd^{(k-1)}} - \Br^{(k+1)} } \cdot \Br^{(k+1)}
-=
+\\ &=
 -\inv{\alpha_k} \Br^{(k+1)} \cdot \Br^{(k+1)}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 This gives
 %

@@ -348,20 +348,20 @@ all at the leading and trailing edges of the signal, but adds significantly to t
 \makeSubAnswer{}{multiphysics:problemSet3a:1e}
 %
 With
-\begin{dmath}\label{eqn:multiphysicsProblemSet3a:231}
+\begin{equation}\label{eqn:multiphysicsProblemSet3a:231}
 \begin{aligned}
 \BA &= \frac{2}{\Delta t} \BC + \BG  \\
 \BB &= \frac{2}{\Delta t} \BC - \BG  \\
 \Bc &= \Bb \lr{v_{\textrm{clk}}(t_{n-1}) + v_{\textrm{clk}}(t_{n}) },
 \end{aligned}
-\end{dmath}
+\end{equation}
 %
 the TR system equations take the form
-\begin{dmath}\label{eqn:multiphysicsProblemSet3a:251}
+\begin{equation}\label{eqn:multiphysicsProblemSet3a:251}
 \BA \Bx' = \BB \Bx + \Bc.
-\end{dmath}
+\end{equation}
 %
-%\begin{dmath}\label{eqn:multiphysicsProblemSet3a:211}
+%\begin{equation}\label{eqn:multiphysicsProblemSet3a:211}
 %\lr{ \frac{2}{\Delta t} \BC + \BG } \Bx_n
 %=
 %-
@@ -370,7 +370,7 @@ the TR system equations take the form
 %\lr{v_{\textrm{clk}}(t_{n-1})
 %+
 %v_{\textrm{clk}}(t_{n}) }.
-%\end{dmath}
+%\end{equation}
 %
 As with BE a \( \BL \BU = \BP \BA \) factorization can be computed once outside of the loop.  In \cref{fig:ps3aTR:ps3aTRFig4} are plots of such TR solutions with a range of timesteps, calculated using \matlabFuncPath{calculateSolutionForTimestep(..., 0)}{ps3a:calculateSolutionForTimestep.m}.
 %
@@ -419,23 +419,23 @@ Close to linear relationships in the log-log plots indicate that the BE and TR 	
 Those lines are found to be
 %
 \begin{subequations}
-\begin{dmath}\label{eqn:multiphysicsProblemSet3a:471}
+\begin{equation}\label{eqn:multiphysicsProblemSet3a:471}
 \ln(\textrm{err}_{\textrm{BE}}) = -3.6366 + 0.6067 \ln( {\Delta t}_{\textrm{BE}} )
-\end{dmath}
-\begin{dmath}\label{eqn:multiphysicsProblemSet3a:491}
+\end{equation}
+\begin{equation}\label{eqn:multiphysicsProblemSet3a:491}
 \ln(\textrm{err}_{\textrm{TR}}) = -4.8835 + 1.0480 \ln( {\Delta t}_{\textrm{TR}} )
-\end{dmath}
+\end{equation}
 \end{subequations}
 %
 With \( \Delta t = 5 \text{ns}/(N -1) \sim 1/N \) this indicates that
 %
 \begin{subequations}
-\begin{dmath}\label{eqn:multiphysicsProblemSet3a:671}
+\begin{equation}\label{eqn:multiphysicsProblemSet3a:671}
 \textrm{err}_{\textrm{BE}} \propto N^{-0.6}
-\end{dmath}
-\begin{dmath}\label{eqn:multiphysicsProblemSet3a:691}
+\end{equation}
+\begin{equation}\label{eqn:multiphysicsProblemSet3a:691}
 \textrm{err}_{\textrm{TR}} \propto N^{-1.05}
-\end{dmath}
+\end{equation}
 \end{subequations}
 %
 This set of proportionality relationships is plotted in \cref{fig:ps3aLogLogExponential:ps3aLogLogExponentialFig7}.  While this ignores the exact proportionality constants and scale factors, this plot illustrates the order of the experimentally determined relationship of the number of timestep intervals to the error for BE and TR.

@@ -73,15 +73,16 @@ r_3 & \rightarrow r_3 - \frac{1}{2} r_1 \\
 %
 which gives
 %
-\begin{dmath}\label{eqn:luExample2:100}
-M_1 =
+\begin{equation}\label{eqn:luExample2:100}
+\begin{aligned}
+M_1 &=
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 -1/2 & 0 & 1
 \end{bmatrix}
 M'
-=
+\\ &=
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
@@ -92,18 +93,20 @@ M'
 0 & 0 & 1 \\
 1 & 1 & 1
 \end{bmatrix}
-=
+\\ &=
 \begin{bmatrix}
 2 & 0 & 4 \\
 0 & 0 & 1 \\
 0 & 1 & -1
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 Application of one more permutation operation gives the desired upper triangular matrix
 %
-\begin{dmath}\label{eqn:luExample2:120}
-U = M_1' =
+\begin{equation}\label{eqn:luExample2:120}
+\begin{aligned}
+U &= M_1' \\ &=
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 0 & 1 \\
@@ -114,13 +117,14 @@ U = M_1' =
 0 & 0 & 1 \\
 0 & 1 & -1
 \end{bmatrix}
-=
+\\ &=
 \begin{bmatrix}
 2 & 0 & 4 \\
 0 & 1 & -1 \\
 0 & 0 & 1
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 This new matrix operator applies to the permuted vector
 %
@@ -135,7 +139,7 @@ x_1 \\
 %
 The matrix \( U \) has been constructed by the following row operations
 %
-\begin{dmath}\label{eqn:luExample2:160}
+\begin{equation}\label{eqn:luExample2:160}
 U =
 \begin{bmatrix}
 1 & 0 & 0 \\
@@ -153,11 +157,11 @@ U =
 0 & 0 & 1 \\
 \end{bmatrix}
 M.
-\end{dmath}
+\end{equation}
 %
 \( L U = M \) is sought, or
 %
-\begin{dmath}\label{eqn:luExample2:180}
+\begin{equation}\label{eqn:luExample2:180}
 L
 \begin{bmatrix}
 1 & 0 & 0 \\
@@ -176,13 +180,14 @@ L
 \end{bmatrix}
 M
 = M,
-\end{dmath}
+\end{equation}
 %
 or
 %
-\begin{dmath}\label{eqn:luExample2:200}
+\begin{equation}\label{eqn:luExample2:200}
+\begin{aligned}
 L
-=
+&=
 \begin{bmatrix}
 0 & 1 & 0 \\
 1 & 0 & 0 \\
@@ -198,7 +203,7 @@ L
 0 & 0 & 1 \\
 0 & 1 & 0 \\
 \end{bmatrix}
-=
+\\ &=
 \begin{bmatrix}
 0 & 1 & 0 \\
 1 & 0 & 0 \\
@@ -209,13 +214,14 @@ L
 0 & 0 & 1 \\
 0 & 1 & 0 \\
 \end{bmatrix}
-=
+\\ &=
 \begin{bmatrix}
 0 & 0 & 1 \\
 1 & 0 & 0 \\
 1/2 & 1 & 0
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 The \( L U \) factorization attempted does not appear to produce a lower triangular factor, but a permutation of a lower triangular factor?
 %
