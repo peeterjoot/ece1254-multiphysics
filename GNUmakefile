@@ -18,6 +18,28 @@ INCOMPLETE += multiphysicsProblemSet2aProblem1.tex
 INCOMPLETE += multiphysicsProblemSet2bProblem1.tex
 INCOMPLETE += multiphysicsProblemSet2bProblem2.tex
 
+# comment this out for online pdf version (uncomment for KDP)
+#PRINT_VERSION := 1
+#ifdef KINDLE_VERSION
+#PARAMS += --kindle
+#endif
+#ifdef PRINT_VERSION
+#SUBFIGDIR := bw
+#else
+#SUBFIGDIR := color
+#endif
+ifndef PRINT_VERSION
+PARAMS += --no-print
+endif
+#PARAMS += -subfig $(SUBFIGDIR)
+#DISTEXTRA := $(SUBFIGDIR)
+ifdef PRINT_VERSION
+DISTEXTRA := kdp
+#DISTEXTRA := $(DISTEXTRA).kdp
+endif
+
+
+
 #ONCEFLAGS := -justonce
 
 SOURCE_DIRS += appendix
