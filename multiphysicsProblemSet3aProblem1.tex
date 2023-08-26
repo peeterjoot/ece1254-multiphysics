@@ -343,7 +343,7 @@ This is the system to solve at each time step for \( \Bx_n \).  A one time LU fa
 Iterative refinement of the timestep was used to determine a reasonable seeming stopping point.  With a rise and fall time of 100 ps, something smaller than that was clearly required, and 50 ps was tried first to get a rough idea of the output signal, checking against expectations for correctness.  A plot at this timestep clearly shows artifacts of the discretization, which is removed at a timestep of 10 ps.  Further reduction of the timestep to 5 ps sharpens the curve slightly, and can still be completed with a reasonable computation time.  A final reduction of the timestep to 1 ps adds very little additional correction,
 all at the leading and trailing edges of the signal, but adds significantly to the time required for the calculation.  Plots with these range of timesteps are shown in \cref{fig:ps3aBE:ps3aBEFig2}.
 %
-\mathImageFigure{../figures/ece1254-multiphysics/ps3aBEFig2.pdf}{Chip voltage at a variety of timesteps.}{fig:ps3aBE:ps3aBEFig2}{0.5}{ps3a:driver.m}
+\mathImageFigure{../figures/ece1254-multiphysics/ps3aBEFig2.pdf}{Chip voltage at a variety of timesteps.}{fig:ps3aBE:ps3aBEFig2}{0.4}{ps3a:driver.m}
 %
 \makeSubAnswer{}{multiphysics:problemSet3a:1e}
 %
