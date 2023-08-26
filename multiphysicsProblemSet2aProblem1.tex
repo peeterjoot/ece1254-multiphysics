@@ -280,8 +280,10 @@ A test of this transformation can be found in \nbcite{ps2a:compareBD.m}{ps2a/com
 %
 \makeSubAnswer{}{multiphysics:problemSet2a:1e}
 %
-The time required to generate the nodal equations on my machine was reasonable for \( N \le 196 \).  For \( N = 256 \) Matlab ran out of memory generating the nodal equations.  With \nbcite{ps2a:nodalEquationsPartEH.m}{ps2a/nodalEquationsPartEH.m}
-the nodal equation variables \( G, b \) for \( N \in \{ 8, 16, 32, 64, 128, 196 \} \), were \matlabFunc{save()}d to .mat files for subsequent use using a call to
+The time required to generate the nodal equations on my machine was reasonable for \( N \le 196 \).  For \( N = 256 \) Matlab ran out of memory generating the nodal equations.
+The nodal equation variables \( G, b \) for \( N \in \{ 8, 16, 32, 64, 128, 196 \} \), were \matlabFunc{save()}d to .mat files for subsequent use 
+in \nbcite{ps2a:nodalEquationsPartEH.m}{ps2a/nodalEquationsPartEH.m}
+using a call to
 \matlabFuncPath{nodalEquationsPartEH(1)}{ps2a:nodalEquationsPartEH.m}
 .  Timing data was collected and plotted in
 \nbcite{ps2a:partEtimings.m}{ps2a/partEtimings.m}.
