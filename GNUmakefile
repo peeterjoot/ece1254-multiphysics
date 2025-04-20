@@ -133,8 +133,5 @@ backmatter.tex: ../latex/classicthesis_mine/backmatter2.tex
 	rm -f $@
 	ln -s ../latex/classicthesis_mine/backmatter2.tex backmatter.tex
 
-scrpage2.sty : ../latex/scrpage2.sty
-	cp $^ $@
-
 %.pdf : %.dot
 	neato -Tpdf $^ -o $@
